@@ -30,7 +30,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -50,7 +49,7 @@
       padding: 0 20px;
     }
 
-    /* ---------- Top navigation ---------- */
+    /* Top navigation */
     .topnav {
       position: sticky;
       top: 0;
@@ -115,23 +114,13 @@
       white-space: nowrap;
     }
 
-    /* ---------- Hero (online-shop version — no physical storefront) ---------- */
+    /* Hero */
     .hero {
       position: relative;
       padding: 90px 20px 70px;
       text-align: center;
       overflow: hidden;
       border-bottom: 1px solid var(--border-gold);
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 20%, rgba(197,160,89,0.06), transparent 40%),
-        radial-gradient(circle at 80% 60%, rgba(197,160,89,0.05), transparent 45%);
-      pointer-events: none;
     }
 
     .hero-badge {
@@ -196,64 +185,70 @@
       color: var(--text-muted);
     }
 
-    /* ---------- Signatures strip ---------- */
-    <section class="signatures">
-  <div class="signatures-title">Our Signatures</div>
-  <div class="signatures-sub">A taste of what's brewing</div>
-
-  <div class="auto-scroll-container">
-    <div class="auto-scroll-track">
-      
-      <!-- Cold Brews -->
-      <a href="#shop" class="signature-card">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
-        <span>Cold Brews</span>
-      </a>
-
-      <!-- Whole Bean Coffee -->
-      <a href="#shop" class="signature-card">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Whole bean coffee">
-        <span>Whole Bean Coffee</span>
-      </a>
-
-      <!-- Syrups & Elixirs -->
-      <a href="#shop" class="signature-card">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla bean syrup">
-        <span>Syrups & Elixirs</span>
-      </a>
-
-      <!-- Energy & Boosts -->
-      <a href="#shop" class="signature-card">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Energy strips and elixirs">
-        <span>Energy & Boosts</span>
-      </a>
-
-      <!-- Duplicate Set for Seamless Continuous Loop -->
-      <a href="#shop" class="signature-card">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
-        <span>Cold Brews</span>
-      </a>
-      <a href="#shop" class="signature-card">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Whole bean coffee">
-        <span>Whole Bean Coffee</span>
-      </a>
-      <a href="#shop" class="signature-card">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla bean syrup">
-        <span>Syrups & Elixirs</span>
-      </a>
-      <a href="#shop" class="signature-card">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Energy strips and elixirs">
-        <span>Energy & Boosts</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-    /* ---------- Category sections ---------- */
-    .category-section {
-      margin: 70px 0;
+    /* Signatures Section */
+    .signatures {
+      text-align: center;
+      padding: 40px 20px;
     }
+
+    .auto-scroll-container {
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+      padding: 15px 0;
+      -webkit-overflow-scrolling: touch;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .auto-scroll-container::-webkit-scrollbar { display: none; }
+
+    .auto-scroll-track {
+      display: inline-flex;
+      gap: 20px;
+      animation: scrollAnimation 20s linear infinite;
+    }
+
+    .auto-scroll-container:hover .auto-scroll-track {
+      animation-play-state: paused;
+    }
+
+    .signature-card {
+      display: inline-block;
+      text-decoration: none;
+      color: inherit;
+      flex: 0 0 auto;
+      width: 220px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .signature-card:hover { transform: translateY(-4px); }
+
+    .signature-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .signature-card span {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    @keyframes scrollAnimation {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Category & Grid */
+    .category-section { margin: 70px 0; }
 
     .category-title {
       font-family: 'Cinzel', serif;
@@ -284,7 +279,6 @@
       justify-content: space-between;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
     }
 
     .card:hover, .product-card:hover {
@@ -323,9 +317,7 @@
       transition: filter 0.3s ease;
     }
 
-    .card:hover .product-img, .product-card:hover .product-img {
-      filter: brightness(1);
-    }
+    .card:hover .product-img, .product-card:hover .product-img { filter: brightness(1); }
 
     .card h3, .product-info h3 {
       font-family: 'Cinzel', serif;
@@ -372,10 +364,6 @@
       cursor: pointer;
     }
 
-    .variant-select:focus {
-      border-color: var(--gold-accent);
-    }
-
     .btn, .buy-btn {
       display: block;
       width: 100%;
@@ -392,7 +380,6 @@
       border-radius: 2px;
       cursor: pointer;
       transition: all 0.3s ease;
-      box-sizing: border-box;
       text-decoration: none;
     }
 
@@ -410,160 +397,11 @@
       font-style: italic;
       color: var(--text-muted);
     }
-    .signatures {
-  text-align: center;
-  padding: 40px 20px;
-  position: relative;
-}
-
-.carousel-wrapper {
-  position: relative;
-  max-width: 900px;
-  margin: 20px auto;
-  display: flex;
-  align-items: center;
-}
-
-.carousel-track-container {
-  overflow: hidden;
-  width: 100%;
-  border-radius: 12px;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.signature-frame.carousel-slide {
-  min-width: 100%;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  cursor: pointer;
-  padding: 10px;
-}
-
-.signature-frame img {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.signature-frame:hover img {
-  transform: scale(1.03);
-}
-
-.signature-frame figcaption {
-  margin-top: 12px;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-/* Arrow Navigation Styling */
-.carousel-arrow {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 24px;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 10;
-  transition: background 0.2s ease;
-}
-
-.carousel-arrow:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
-    .signatures {
-  text-align: center;
-  padding: 30px 10px;
-}
-
-/* Outer wrapper that enables manual scrolling */
-.auto-scroll-container {
-  width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-  padding: 15px 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Hide scrollbar while retaining scroll functionality */
-.auto-scroll-container::-webkit-scrollbar {
-  display: none;
-}
-.auto-scroll-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Moving inner container */
-.auto-scroll-track {
-  display: inline-flex;
-  gap: 20px;
-  animation: scrollAnimation 20s linear infinite;
-}
-
-/* Pause animation on hover or touch */
-.auto-scroll-container:hover .auto-scroll-track {
-  animation-play-state: paused;
-}
-
-/* Individual item cards */
-.signature-card {
-  display: inline-block;
-  text-decoration: none;
-  color: inherit;
-  flex: 0 0 auto;
-  width: 220px;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.signature-card:hover {
-  transform: translateY(-4px);
-}
-
-.signature-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.signature-card span {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 1rem;
-  color: #4a2c2a;
-}
-
-/* Smooth continuous marquee animation */
-@keyframes scrollAnimation {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
   </style>
 </head>
 <body>
 
-  <!-- Top nav: online store, no physical-location links -->
+  <!-- Top Navigation -->
   <nav class="topnav">
     <div class="topnav-inner">
       <ul class="nav-links">
@@ -575,13 +413,13 @@
         <span>Parlor & Paw</span>
       </div>
       <ul class="nav-links">
-        <li><a href="#merch">Merch</a></li> 
-<a href="contact.html">Contact Us</a>
+        <li><a href="#merch">Merch</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero: online-only framing, no shopfront imagery or "reserve a table" -->
+  <!-- Hero Section -->
   <section class="hero">
     <span class="hero-badge">Online Shop · Est. 2026</span>
     <h1 class="hero-title">Curious Brews, Delivered</h1>
@@ -590,50 +428,51 @@
     <div class="hero-note">Online-only for now — a Parlor & Paw food truck is in the works 🐾</div>
   </section>
 
-  <!-- Signatures preview strip -->
+  <!-- Signatures Section -->
   <section class="signatures">
-  <div class="signatures-title">Our Signatures</div>
-  <div class="signatures-sub">A taste of what's brewing</div>
-  
-  <div class="carousel-wrapper">
-    <button class="carousel-arrow prev-btn" aria-label="Previous slide">&#10094;</button>
-    
-    <div class="carousel-track-container">
-      <div class="carousel-track">
-        
-        <!-- Cold Brews -->
-        <a href="#shop" class="signature-frame carousel-slide">
+    <div class="signatures-title">Our Signatures</div>
+    <div class="signatures-sub">A taste of what's brewing</div>
+
+    <div class="auto-scroll-container">
+      <div class="auto-scroll-track">
+        <a href="#shop" class="signature-card">
           <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
-          <figcaption>Cold Brews</figcaption>
+          <span>Cold Brews</span>
         </a>
-
-        <!-- Whole Bean Coffee -->
-        <a href="#shop" class="signature-frame carousel-slide">
+        <a href="#shop" class="signature-card">
           <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Whole bean coffee">
-          <figcaption>Whole Bean Coffee</figcaption>
+          <span>Whole Bean Coffee</span>
         </a>
-
-        <!-- Syrups & Elixirs -->
-        <a href="#shop" class="signature-frame carousel-slide">
+        <a href="#shop" class="signature-card">
           <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla bean syrup">
-          <figcaption>Syrups & Elixirs</figcaption>
+          <span>Syrups & Elixirs</span>
         </a>
-
-        <!-- Energy & Boosts -->
-        <a href="#shop" class="signature-frame carousel-slide">
+        <a href="#shop" class="signature-card">
           <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Energy strips and elixirs">
-          <figcaption>Energy & Boosts</figcaption>
+          <span>Energy & Boosts</span>
         </a>
-
+        <!-- Loop duplication -->
+        <a href="#shop" class="signature-card">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
+          <span>Cold Brews</span>
+        </a>
+        <a href="#shop" class="signature-card">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Whole bean coffee">
+          <span>Whole Bean Coffee</span>
+        </a>
+        <a href="#shop" class="signature-card">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla bean syrup">
+          <span>Syrups & Elixirs</span>
+        </a>
+        <a href="#shop" class="signature-card">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Energy strips and elixirs">
+          <span>Energy & Boosts</span>
+        </a>
       </div>
     </div>
+  </section>
 
-    <button class="carousel-arrow next-btn" aria-label="Next slide">&#10095;</button>
-  </div>
-</section>
-
-<div class="container" id="shop">
-
+  <!-- Main Storefront Container -->
   <div class="container" id="shop">
 
     <!-- Special Bundles -->
@@ -667,7 +506,6 @@
     <div class="category-section">
       <h2 class="category-title">☕ Coffee & Cold Brews</h2>
       <div class="grid">
-
         <div class="card">
           <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/ObRWMZpX/model1-2026-08-28T02-48-15-863Z.webp" alt="The Pawlor Sampler — 4-Pack">
           <div>
@@ -741,7 +579,6 @@
           </div>
           <a class="buy-btn" href="https://app.dough.do/api/buy/mVhJyJR8" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
         </div>
-
       </div>
     </div>
 
@@ -749,7 +586,6 @@
     <div class="category-section">
       <h2 class="category-title">⚡ Energy & Boosts</h2>
       <div class="grid">
-
         <div class="card">
           <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Parlor & Paw Energy Strips">
           <div>
@@ -773,7 +609,6 @@
           </div>
           <a id="dough-buy-btn" class="buy-btn" href="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
         </div>
-
       </div>
     </div>
 
@@ -781,7 +616,6 @@
     <div class="category-section" id="merch">
       <h2 class="category-title">🐶 Merchandise & Goods</h2>
       <div class="grid">
-
         <div class="product-card">
           <img class="product-img" src="https://images.printify.com/mockup/6a9e3abdd18961405c09b153/18542/102044/1a07a27f878.jpg?s=608" alt="Victorian Paw Graphic Tee">
           <div class="product-info">
@@ -801,22 +635,22 @@
         </div>
 
         <div class="product-card">
-  <img class="product-img" src="https://images.printify.com/mockup/6a9eff0385e12b25ef09fb87/197956/135771/copy-of-parlor-paw-coffee-co-chihuahua-logo-sweatshirt-dog-coffee-shop-crewneck.jpg?camera_label=front&t=1788807099737&s=500" alt="Victorian Paw Sweatshirt">
-  <div class="product-info">
-    <h3>Victorian Paw Sweatshirt</h3>
-    <p class="product-description">Cozy heavy blend crewneck sweatshirt. Soft cotton-poly blend.</p>
-    <div class="product-price">$34.99 – $39.99</div>
-  </div>
-  <button class="buy-btn snipcart-add-item"
-    data-item-id="victorian-paw-sweatshirt"
-    data-item-price="34.99"
-    data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-    data-item-name="Victorian Paw Sweatshirt"
-    data-item-custom1-name="Size"
-    data-item-custom1-options="Small|Medium|Large|X-Large|2XL[+3.00]|3XL[+5.00]">
-    Add to Cart
-  </button>
-</div>
+          <img class="product-img" src="https://images.printify.com/mockup/6a9eff0385e12b25ef09fb87/197956/135771/copy-of-parlor-paw-coffee-co-chihuahua-logo-sweatshirt-dog-coffee-shop-crewneck.jpg?camera_label=front&t=1788807099737&s=500" alt="Victorian Paw Sweatshirt">
+          <div class="product-info">
+            <h3>Victorian Paw Sweatshirt</h3>
+            <p class="product-description">Cozy heavy blend crewneck sweatshirt. Soft cotton-poly blend.</p>
+            <div class="product-price">$34.99 – $39.99</div>
+          </div>
+          <button class="buy-btn snipcart-add-item"
+            data-item-id="victorian-paw-sweatshirt"
+            data-item-price="34.99"
+            data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
+            data-item-name="Victorian Paw Sweatshirt"
+            data-item-custom1-name="Size"
+            data-item-custom1-options="Small|Medium|Large|X-Large|2XL[+3.00]|3XL[+5.00]">
+            Add to Cart
+          </button>
+        </div>
 
         <div class="product-card">
           <img class="product-img" src="https://images.printify.com/mockup/6a9e3940cbdbfb20ed0288b1/114840/140946/1a07a31c060.jpg?s=608" alt="Nocturne Insulated Tumbler">
@@ -849,10 +683,15 @@
             Add to Cart
           </button>
         </div>
-
       </div>
     </div>
+
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Parlor & Paw Coffee Co. All rights reserved.</p>
+  </footer>
 
   <!-- Snipcart Hidden Container -->
   <div hidden id="snipcart" data-api-key="NWE1ZjUzNTctNmZjMi00MWEzLWE0N2ItNTc3ZGRiYTA2NTlmNjM5MjQzNTc0OTQ1OTYxNTg3" data-config-modal-style="side"></div>

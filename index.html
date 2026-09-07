@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Snipcart CSS & JS (Bundles & Merchandise only) -->
+  <!-- Snipcart CSS & JS -->
   <link rel="preconnect" href="https://app.snipcart.com">
   <link rel="preconnect" href="https://cdn.snipcart.com">
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
@@ -32,12 +32,12 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
-    /* Body Background with lighter radial mask so damask tile shows through */
+    /* Damask Background with proper GitHub Pages subfolder path */
     body {
       background-color: #0b0705;
       background-image: 
         radial-gradient(circle at center, rgba(30, 20, 15, 0.05) 0%, rgba(5, 3, 2, 0.35) 100%),
-        url('dark-damask-tile.png');
+        url('/parlor-and-paw-or-coffee-shop/dark-damask-tile.png');
       background-repeat: repeat;
       background-attachment: fixed;
       color: #f0e6d2;
@@ -46,9 +46,9 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    /* Top Navigation with Wood Background */
+    /* Dark Wood Navigation Bar with proper GitHub Pages subfolder path */
     .top-nav {
-      background-image: url('dark-wood-tile.png');
+      background-image: url('/parlor-and-paw-or-coffee-shop/dark-wood-tile.png');
       background-repeat: repeat;
       background-position: top center;
       box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.8), 
@@ -89,7 +89,7 @@
       border-color: var(--gold-accent);
     }
 
-    /* Enlarged & Prominent Brand Logo */
+    /* Enlarged Brand Logo Header */
     .nav-badge {
       display: flex;
       align-items: center;
@@ -97,23 +97,23 @@
     }
 
     .nav-badge img {
-      width: 64px;
-      height: 64px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
       border: 2px solid var(--gold-accent);
-      box-shadow: 0 0 12px rgba(197, 160, 89, 0.4);
+      box-shadow: 0 0 14px rgba(197, 160, 89, 0.5);
       object-fit: cover;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .nav-badge img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 18px rgba(197, 160, 89, 0.7);
+      box-shadow: 0 0 20px rgba(197, 160, 89, 0.8);
     }
 
     .nav-badge span {
       font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: 1.5px;
       color: var(--gold-accent);
@@ -405,25 +405,20 @@
       color: var(--text-muted);
     }
 
-    /* Mobile Responsiveness */
     @media (max-width: 768px) {
       .top-nav .container {
         flex-direction: column;
         gap: 12px;
       }
 
-      .nav-links {
-        gap: 18px;
-      }
+      .nav-links { gap: 18px; }
 
       .nav-badge img {
-        width: 52px;
-        height: 52px;
+        width: 56px;
+        height: 56px;
       }
 
-      h1.hero-title {
-        font-size: 2rem;
-      }
+      h1.hero-title { font-size: 2rem; }
     }
   </style>
 </head>
@@ -479,7 +474,6 @@
           <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Energy strips and elixirs">
           <span>Energy & Boosts</span>
         </a>
-        <!-- Loop duplication -->
         <a href="#shop" class="signature-card">
           <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
           <span>Cold Brews</span>

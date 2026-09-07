@@ -32,11 +32,12 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
+    /* Body Background with lighter radial mask so damask tile shows through */
     body {
       background-color: #0b0705;
       background-image: 
-        radial-gradient(circle at center, rgba(30, 20, 15, 0.1) 0%, rgba(5, 3, 2, 0.45) 100%),
-        url('https://raw.githubusercontent.com/stephaniemcdonald7-dot/parlor-and-paw-or-coffee-shop/main/dark-damask-tile.png');
+        radial-gradient(circle at center, rgba(30, 20, 15, 0.05) 0%, rgba(5, 3, 2, 0.35) 100%),
+        url('dark-damask-tile.png');
       background-repeat: repeat;
       background-attachment: fixed;
       color: #f0e6d2;
@@ -45,14 +46,15 @@
       font-family: 'Montserrat', sans-serif;
     }
 
+    /* Top Navigation with Wood Background */
     .top-nav {
-      background-image: url('https://raw.githubusercontent.com/stephaniemcdonald7-dot/parlor-and-paw-or-coffee-shop/main/dark-wood-tile.png');
+      background-image: url('dark-wood-tile.png');
       background-repeat: repeat;
       background-position: top center;
       box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.8), 
                   inset 0 -10px 15px rgba(0, 0, 0, 0.8);
       border-bottom: 1px solid #c5a059; 
-      padding: 15px 0;
+      padding: 12px 0;
     }
 
     a { color: inherit; }
@@ -73,7 +75,7 @@
 
     .nav-links a {
       font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       letter-spacing: 1px;
       color: var(--text-light);
       text-decoration: none;
@@ -87,25 +89,36 @@
       border-color: var(--gold-accent);
     }
 
+    /* Enlarged & Prominent Brand Logo */
     .nav-badge {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
     }
 
     .nav-badge img {
-      width: 42px;
-      height: 42px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
-      border: 1px solid var(--gold-accent);
+      border: 2px solid var(--gold-accent);
+      box-shadow: 0 0 12px rgba(197, 160, 89, 0.4);
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-badge img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 18px rgba(197, 160, 89, 0.7);
     }
 
     .nav-badge span {
       font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
       color: var(--gold-accent);
       white-space: nowrap;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 
     /* Hero */
@@ -390,6 +403,27 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       color: var(--text-muted);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .top-nav .container {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .nav-badge img {
+        width: 52px;
+        height: 52px;
+      }
+
+      h1.hero-title {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>

@@ -197,74 +197,58 @@
     }
 
     /* ---------- Signatures strip ---------- */
-    .signatures {
-      padding: 60px 20px 10px;
-    }
+    <section class="signatures">
+  <div class="signatures-title">Our Signatures</div>
+  <div class="signatures-sub">A taste of what's brewing</div>
 
-    .signatures-title {
-      text-align: center;
-      font-family: 'Cinzel', serif;
-      font-size: 1.3rem;
-      letter-spacing: 3px;
-      color: var(--gold-accent);
-      margin-bottom: 8px;
-    }
+  <div class="auto-scroll-container">
+    <div class="auto-scroll-track">
+      
+      <!-- Cold Brews -->
+      <a href="#shop" class="signature-card">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
+        <span>Cold Brews</span>
+      </a>
 
-    .signatures-title::before,
-    .signatures-title::after {
-      content: '❖';
-      color: var(--border-gold-strong);
-      font-size: 0.9rem;
-      margin: 0 14px;
-    }
+      <!-- Whole Bean Coffee -->
+      <a href="#shop" class="signature-card">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Whole bean coffee">
+        <span>Whole Bean Coffee</span>
+      </a>
 
-    .signatures-sub {
-      text-align: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      color: var(--text-muted);
-      margin-bottom: 36px;
-    }
+      <!-- Syrups & Elixirs -->
+      <a href="#shop" class="signature-card">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla bean syrup">
+        <span>Syrups & Elixirs</span>
+      </a>
 
-    .signatures-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-    }
+      <!-- Energy & Boosts -->
+      <a href="#shop" class="signature-card">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Energy strips and elixirs">
+        <span>Energy & Boosts</span>
+      </a>
 
-    .signature-frame {
-      border: 1px solid var(--border-gold);
-      padding: 10px;
-      background: var(--bg-card);
-      text-align: center;
-      transition: border-color 0.3s ease, transform 0.3s ease;
-      margin: 0;
-    }
+      <!-- Duplicate Set for Seamless Continuous Loop -->
+      <a href="#shop" class="signature-card">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
+        <span>Cold Brews</span>
+      </a>
+      <a href="#shop" class="signature-card">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Whole bean coffee">
+        <span>Whole Bean Coffee</span>
+      </a>
+      <a href="#shop" class="signature-card">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla bean syrup">
+        <span>Syrups & Elixirs</span>
+      </a>
+      <a href="#shop" class="signature-card">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Energy strips and elixirs">
+        <span>Energy & Boosts</span>
+      </a>
 
-    .signature-frame:hover {
-      border-color: var(--gold-accent);
-      transform: translateY(-4px);
-    }
-
-    .signature-frame img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      filter: brightness(0.9) contrast(1.05);
-    }
-
-    .signature-frame figcaption {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--text-light);
-      padding: 14px 6px 8px;
-      border-top: 1px solid var(--border-gold);
-      margin-top: 10px;
-    }
+    </div>
+  </div>
+</section>
 
     /* ---------- Category sections ---------- */
     .category-section {

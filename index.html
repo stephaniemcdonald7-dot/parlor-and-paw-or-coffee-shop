@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Parlor & Paw Coffee Co.</title>
-  
+  <title>The Parlor & Paw Coffee Co. — Online Shop</title>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Snipcart CSS & JS -->
+  <!-- Snipcart CSS & JS (Bundles & Merchandise only) -->
   <link rel="preconnect" href="https://app.snipcart.com">
   <link rel="preconnect" href="https://cdn.snipcart.com">
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
   <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
 
   <style>
-    /* Victorian Goth Color Palette & Styling */
     :root {
       --bg-dark: #0f0d0e;
       --bg-card: #181416;
@@ -30,7 +29,10 @@
       --border-gold-strong: rgba(197, 160, 89, 0.7);
     }
 
-    /* Global Setup */
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       background-color: var(--bg-dark);
       background-image: radial-gradient(circle at 50% 0%, #1f1613 0%, var(--bg-dark) 70%);
@@ -40,96 +42,233 @@
       color: var(--text-light);
     }
 
+    a { color: inherit; }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 0 20px;
     }
 
-    /* Victorian Header Layout */
-    .header-brand {
-      text-align: center;
-      margin-bottom: 40px;
-      position: relative;
-      padding-bottom: 25px;
+    /* ---------- Top navigation ---------- */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      background: rgba(15, 13, 14, 0.92);
+      backdrop-filter: blur(6px);
       border-bottom: 1px solid var(--border-gold);
     }
 
-    .header-brand::after {
-      content: '❖';
-      position: absolute;
-      bottom: -11px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--bg-dark);
-      padding: 0 15px;
-      color: var(--gold-accent);
-      font-size: 1.1rem;
+    .topnav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    .logo-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 2px solid var(--gold-accent);
-      box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
-      margin-bottom: 15px;
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
     }
 
-    h1 {
+    .nav-links a {
       font-family: 'Cinzel', serif;
-      font-size: 2.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: var(--text-light);
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-accent);
+      border-color: var(--gold-accent);
+    }
+
+    .nav-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-badge img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-accent);
+    }
+
+    .nav-badge span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      color: var(--gold-accent);
+      white-space: nowrap;
+    }
+
+    /* ---------- Hero (online-shop version — no physical storefront) ---------- */
+    .hero {
+      position: relative;
+      padding: 90px 20px 70px;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(197,160,89,0.06), transparent 40%),
+        radial-gradient(circle at 80% 60%, rgba(197,160,89,0.05), transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: var(--gold-accent);
+      border: 1px solid var(--border-gold-strong);
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    h1.hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
       font-weight: 700;
       letter-spacing: 2px;
       color: var(--gold-accent);
-      margin: 10px 0 5px 0;
+      margin: 0 0 18px 0;
       text-transform: uppercase;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .tagline {
+    .hero-tagline {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       color: var(--text-muted);
-      margin: 0 0 20px 0;
+      max-width: 560px;
+      margin: 0 auto 34px auto;
+      line-height: 1.5;
     }
 
-    /* Floating Cart Button */
-    .snipcart-checkout-container {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-    }
-
-    .snipcart-checkout {
-      background: var(--mahogany);
-      color: var(--gold-accent);
-      border: 1px solid var(--gold-accent);
-      padding: 10px 20px;
-      border-radius: 30px;
+    .hero-cta {
+      display: inline-block;
       font-family: 'Cinzel', serif;
       font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-      transition: all 0.3s ease;
-    }
-
-    .snipcart-checkout:hover {
-      background: var(--gold-accent);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
       color: #000;
-      box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+      background: var(--gold-accent);
+      padding: 14px 36px;
+      border-radius: 2px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Category Titles */
+    .hero-cta:hover {
+      background: var(--gold-hover);
+      box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      font-size: 0.78rem;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+    }
+
+    /* ---------- Signatures strip ---------- */
+    .signatures {
+      padding: 60px 20px 10px;
+    }
+
+    .signatures-title {
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+      color: var(--gold-accent);
+      margin-bottom: 8px;
+    }
+
+    .signatures-title::before,
+    .signatures-title::after {
+      content: '❖';
+      color: var(--border-gold-strong);
+      font-size: 0.9rem;
+      margin: 0 14px;
+    }
+
+    .signatures-sub {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+
+    .signatures-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .signature-frame {
+      border: 1px solid var(--border-gold);
+      padding: 10px;
+      background: var(--bg-card);
+      text-align: center;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      margin: 0;
+    }
+
+    .signature-frame:hover {
+      border-color: var(--gold-accent);
+      transform: translateY(-4px);
+    }
+
+    .signature-frame img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      filter: brightness(0.9) contrast(1.05);
+    }
+
+    .signature-frame figcaption {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      padding: 14px 6px 8px;
+      border-top: 1px solid var(--border-gold);
+      margin-top: 10px;
+    }
+
+    /* ---------- Category sections ---------- */
     .category-section {
-      margin-bottom: 50px;
+      margin: 70px 0;
     }
 
     .category-title {
@@ -145,14 +284,12 @@
       gap: 10px;
     }
 
-    /* Storefront Grid Layout */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
       gap: 25px;
     }
 
-    /* Unified Card Design */
     .card, .product-card {
       background: var(--bg-card);
       border: 1px solid var(--border-gold);
@@ -172,7 +309,6 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197, 160, 89, 0.15);
     }
 
-    /* Featured Bundle Card */
     .featured-card {
       border: 1px solid var(--gold-accent);
       background: linear-gradient(145deg, #221a17 0%, var(--bg-card) 100%);
@@ -192,7 +328,6 @@
       margin-bottom: 12px;
     }
 
-    /* Images */
     .product-img {
       width: 100%;
       height: 200px;
@@ -208,7 +343,6 @@
       filter: brightness(1);
     }
 
-    /* Headings & Descriptions */
     .card h3, .product-info h3 {
       font-family: 'Cinzel', serif;
       font-size: 1.1rem;
@@ -225,7 +359,6 @@
       line-height: 1.4;
     }
 
-    /* Price Styling */
     .price, .product-price {
       font-family: 'Cinzel', serif;
       font-size: 1.2rem;
@@ -241,7 +374,6 @@
       font-weight: normal;
     }
 
-    /* Variant Select Input */
     .variant-select {
       width: 100%;
       padding: 10px;
@@ -260,7 +392,6 @@
       border-color: var(--gold-accent);
     }
 
-    /* Buttons & Actions */
     .btn, .buy-btn {
       display: block;
       width: 100%;
@@ -286,305 +417,300 @@
       color: #000;
       box-shadow: 0 0 10px rgba(197, 160, 89, 0.4);
     }
+
+    footer {
+      border-top: 1px solid var(--border-gold);
+      padding: 30px 20px 50px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--text-muted);
+    }
   </style>
 </head>
 <body>
 
-<!-- Floating Snipcart Checkout -->
-<div class="snipcart-checkout-container">
-  <button class="snipcart-checkout">
-    🛒 Cart (<span class="snipcart-items-count">0</span>)
-  </button>
-</div>
-
-<div class="container">
-  
-    <!-- Victorian Goth Header -->
-    <div class="header-brand">
-      <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Logo" class="logo-img">
-      <h1>The Parlor & Paw</h1>
-      <div class="tagline">Craft Coffee & Curiosities for Discriminating Souls</div>
+  <!-- Top nav: online store, no physical-location links -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#bundles">Bundles</a></li>
+      </ul>
+      <div class="nav-badge">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Coffee Co. logo">
+        <span>Parlor & Paw</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#merch">Merch</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <!-- Special Bundles Section -->
-    <div class="category-section">
-        <h2 class="category-title">🎁 Special Bundles</h2>
-        <div class="grid">
-            <div class="card featured-card">
-                <div>
-                    <span class="badge">Best Value</span>
-                    <h3>🐾 The Pawlor Trio Bundle</h3>
-                    <div class="price">$54.99 <del>$86.97</del></div>
-                    <div class="description">
-                        Includes the Victorian Paw Graphic Tee, Nocturne Insulated Tumbler, and Weekend Paw Beverage Sleeve.
-                    </div>
-                </div>
-                <button class="btn snipcart-add-item"
-                  data-item-id="pawlor-trio-bundle"
-                  data-item-price="54.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="The Pawlor Trio Bundle"
-                  data-item-description="Includes Victorian Paw Tee, Nocturne Tumbler, and Beverage Sleeve."
-                  data-item-custom1-name="T-Shirt Size"
-                  data-item-custom1-options="Small|Medium|Large|X-Large|2XL|3XL">
-                  Add Bundle to Cart
-                </button>
+  <!-- Hero: online-only framing, no shopfront imagery or "reserve a table" -->
+  <section class="hero">
+    <span class="hero-badge">Online Shop · Est. 2026</span>
+    <h1 class="hero-title">Curious Brews, Delivered</h1>
+    <p class="hero-tagline">Craft cold brews, whole bean coffee, and curiosities for discriminating souls — shipped straight to your door while we save up for the parlor on wheels.</p>
+    <a href="#shop" class="hero-cta">Shop Now</a>
+    <div class="hero-note">Online-only for now — a Parlor & Paw food truck is in the works 🐾</div>
+  </section>
+
+  <!-- Signatures preview strip -->
+  <section class="signatures">
+    <div class="signatures-title">Our Signatures</div>
+    <div class="signatures-sub">A taste of what's brewing</div>
+    <div class="signatures-grid">
+      <figure class="signature-frame">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
+        <figcaption>Cold Brews</figcaption>
+      </figure>
+      <figure class="signature-frame">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Whole bean coffee">
+        <figcaption>Whole Bean Coffee</figcaption>
+      </figure>
+      <figure class="signature-frame">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla bean syrup">
+        <figcaption>Syrups & Elixirs</figcaption>
+      </figure>
+      <figure class="signature-frame">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Energy strips and elixirs">
+        <figcaption>Energy & Boosts</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="container" id="shop">
+
+    <!-- Special Bundles -->
+    <div class="category-section" id="bundles">
+      <h2 class="category-title">🎁 Special Bundles</h2>
+      <div class="grid">
+        <div class="card featured-card">
+          <div>
+            <span class="badge">Best Value</span>
+            <h3>🐾 The Pawlor Trio Bundle</h3>
+            <div class="price">$54.99 <del>$86.97</del></div>
+            <div class="description">
+              Includes the Victorian Paw Graphic Tee, Nocturne Insulated Tumbler, and Weekend Paw Beverage Sleeve.
             </div>
+          </div>
+          <button class="btn snipcart-add-item"
+            data-item-id="pawlor-trio-bundle"
+            data-item-price="54.99"
+            data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
+            data-item-name="The Pawlor Trio Bundle"
+            data-item-description="Includes Victorian Paw Tee, Nocturne Tumbler, and Beverage Sleeve."
+            data-item-custom1-name="T-Shirt Size"
+            data-item-custom1-options="Small|Medium|Large|X-Large|2XL|3XL">
+            Add Bundle to Cart
+          </button>
         </div>
+      </div>
     </div>
 
-    <!-- Coffee & Cold Brews Section -->
+    <!-- Coffee & Cold Brews -->
     <div class="category-section">
-        <h2 class="category-title">☕ Coffee & Cold Brews</h2>
-        <div class="grid">
+      <h2 class="category-title">☕ Coffee & Cold Brews</h2>
+      <div class="grid">
 
-            <div class="card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="The Pawlor Sampler — 4-Pack">
-                <div>
-                    <h3>🐾 The Pawlor Sampler — 4-Pack</h3>
-                    <div class="price">$24.99</div>
-                </div>
-                <a class="buy-btn"
-                   href="https://app.dough.do/api/buy/ObRWMZpX"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                   Buy Now on Dough
-                </a>
-            </div>
-
-            <div class="card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Salted Caramel Cold Brew">
-                <div>
-                    <h3>☕ Salted Caramel Cold Brew</h3>
-                    <div class="price">$4.99</div>
-                </div>
-                <a class="buy-btn"
-                   href="https://app.dough.do/api/buy/Jkky0FiF"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                   Buy Now on Dough
-                </a>
-            </div>
-
-            <div class="card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Brown Sugar Bark & Spice">
-                <div>
-                    <h3>🐾 Brown Sugar Bark & Spice</h3>
-                    <div class="price">$4.99</div>
-                </div>
-                <a class="buy-btn"
-                   href="https://app.dough.do/api/buy/qZKKRTiU"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                   Buy Now on Dough
-                </a>
-            </div>
-
-            <div class="card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="The Duchess's Vanilla Cream">
-                <div>
-                    <h3>👑 The Duchess's Vanilla Cream</h3>
-                    <div class="price">$6.79</div>
-                </div>
-                <a class="buy-btn"
-                   href="https://app.dough.do/api/buy/oqFFbKGj"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                   Buy Now on Dough
-                </a>
-            </div>
-
-            <div class="card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="The Velvet Paw Cold Brew">
-                <div>
-                    <h3>🖤 The Velvet Paw Cold Brew</h3>
-                    <div class="price">$4.99</div>
-                </div>
-                <a class="buy-btn"
-                   href="https://app.dough.do/api/buy/bZByCdW6"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                   Buy Now on Dough
-                </a>
-            </div>
-
-            <div class="card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature Cold Brew — 12-Pack">
-                <div>
-                    <h3>🌙 Signature Cold Brew — 12-Pack</h3>
-                    <div class="price">$69.99</div>
-                </div>
-                <a class="buy-btn"
-                   href="https://app.dough.do/api/buy/sPulEtqm"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                   Buy Now on Dough
-                </a>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Midnight Parlor Silk">
-                <div class="product-info">
-                    <h3>🌙 Midnight Parlor Silk</h3>
-                    <p class="product-description">Signature coffee roast whole beans / specialty blend.</p>
-                    <div class="product-price">$6.99</div>
-                </div>
-                <button class="buy-btn snipcart-add-item"
-                    data-item-id="midnight-parlor-silk"
-                    data-item-price="6.99"
-                    data-item-url="https://parlorpawcoffeeco.dough.do/products/qROa5bUq"
-                    data-item-name="Midnight Parlor Silk"
-                    data-item-description="Signature coffee roast whole beans / specialty blend.">
-                    Buy Now on Dough
-                </button>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla Bean Syrup">
-                <div class="product-info">
-                    <h3>🍦 Vanilla Bean Syrup</h3>
-                    <p class="product-description">Artisanal vanilla elixir to sweeten your darkest brews.</p>
-                    <div class="product-price">$21.99</div>
-                </div>
-                <a class="buy-btn"
-                   href="https://app.dough.do/api/buy/mVhJyJR8"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Buy Now on Dough
-                </a>
-            </div>
-
+        <div class="card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="The Pawlor Sampler — 4-Pack">
+          <div>
+            <h3>🐾 The Pawlor Sampler — 4-Pack</h3>
+            <div class="price">$24.99</div>
+          </div>
+          <a class="buy-btn" href="https://app.dough.do/api/buy/ObRWMZpX" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
         </div>
+
+        <div class="card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Salted Caramel Cold Brew">
+          <div>
+            <h3>☕ Salted Caramel Cold Brew</h3>
+            <div class="price">$4.99</div>
+          </div>
+          <a class="buy-btn" href="https://app.dough.do/api/buy/Jkky0FiF" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
+        </div>
+
+        <div class="card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Brown Sugar Bark & Spice">
+          <div>
+            <h3>🐾 Brown Sugar Bark & Spice</h3>
+            <div class="price">$4.99</div>
+          </div>
+          <a class="buy-btn" href="https://app.dough.do/api/buy/qZKKRTiU" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
+        </div>
+
+        <div class="card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="The Duchess's Vanilla Cream">
+          <div>
+            <h3>👑 The Duchess's Vanilla Cream</h3>
+            <div class="price">$6.79</div>
+          </div>
+          <a class="buy-btn" href="https://app.dough.do/api/buy/oqFFbKGj" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
+        </div>
+
+        <div class="card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="The Velvet Paw Cold Brew">
+          <div>
+            <h3>🖤 The Velvet Paw Cold Brew</h3>
+            <div class="price">$4.99</div>
+          </div>
+          <a class="buy-btn" href="https://app.dough.do/api/buy/bZByCdW6" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
+        </div>
+
+        <div class="card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature Cold Brew — 12-Pack">
+          <div>
+            <h3>🌙 Signature Cold Brew — 12-Pack</h3>
+            <div class="price">$69.99</div>
+          </div>
+          <a class="buy-btn" href="https://app.dough.do/api/buy/sPulEtqm" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
+        </div>
+
+        <div class="product-card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Midnight Parlor Silk">
+          <div class="product-info">
+            <h3>🌙 Midnight Parlor Silk</h3>
+            <p class="product-description">Signature coffee roast whole beans / specialty blend.</p>
+            <div class="product-price">$6.99</div>
+          </div>
+          <a class="buy-btn" href="https://app.dough.do/api/buy/qROa5bUq" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
+        </div>
+
+        <div class="product-card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla Bean Syrup">
+          <div class="product-info">
+            <h3>🍦 Vanilla Bean Syrup</h3>
+            <p class="product-description">Artisanal vanilla elixir to sweeten your darkest brews.</p>
+            <div class="product-price">$21.99</div>
+          </div>
+          <a class="buy-btn" href="https://app.dough.do/api/buy/mVhJyJR8" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Energy & Boosts Section -->
+    <!-- Energy & Boosts -->
     <div class="category-section">
-        <h2 class="category-title">⚡ Energy & Boosts</h2>
-        <div class="grid">
+      <h2 class="category-title">⚡ Energy & Boosts</h2>
+      <div class="grid">
 
-            <div class="card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Energy Strips">
-                <div>
-                    <h3>⚡ Parlor & Paw Energy Strips</h3>
-                    <div class="price">$14.00</div>
-                </div>
-                <a class="buy-btn"
-                   href="https://app.dough.do/api/buy/yX7vxFT9"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                   Buy Now on Dough
-                </a>
-            </div>
-
-            <div class="product-card">
-                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Blackberry Vanilla Elixir">
-                <div class="product-info">
-                    <h3>🫐 Blackberry Vanilla Elixir</h3>
-                    <p class="product-description">Premium finish item fulfilled directly via Dough & Stripe.</p>
-                    <div class="product-price">Select Finish</div>
-
-                    <select id="dough-finish-selector" class="variant-select" onchange="updateDoughCheckoutLink()">
-                      <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D">Glossy Black</option>
-                      <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Gold%22%7D">Gold</option>
-                      <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Standard%20Silver%22%7D">Standard Silver</option>
-                    </select>
-                </div>
-                <a id="dough-buy-btn"
-                   class="buy-btn"
-                   href="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                   Buy Now on Dough
-                </a>
-            </div>
-
+        <div class="card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Energy Strips">
+          <div>
+            <h3>⚡ Parlor & Paw Energy Strips</h3>
+            <div class="price">$14.00</div>
+          </div>
+          <a class="buy-btn" href="https://app.dough.do/api/buy/yX7vxFT9" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
         </div>
+
+        <div class="product-card">
+          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Blackberry Vanilla Elixir">
+          <div class="product-info">
+            <h3>🫐 Blackberry Vanilla Elixir</h3>
+            <p class="product-description">Premium finish item fulfilled directly via Dough & Stripe.</p>
+            <div class="product-price">Select Finish</div>
+            <select id="dough-finish-selector" class="variant-select" onchange="updateDoughCheckoutLink()">
+              <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D">Glossy Black</option>
+              <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Gold%22%7D">Gold</option>
+              <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Standard%20Silver%22%7D">Standard Silver</option>
+            </select>
+          </div>
+          <a id="dough-buy-btn" class="buy-btn" href="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Merchandise Section -->
-    <div class="category-section">
-        <h2 class="category-title">🐶 Merchandise & Goods</h2>
-        <div class="grid">
+    <!-- Merchandise -->
+    <div class="category-section" id="merch">
+      <h2 class="category-title">🐶 Merchandise & Goods</h2>
+      <div class="grid">
 
-            <div class="product-card">
-                <div class="product-info">
-                    <h3>Victorian Paw Graphic Tee</h3>
-                    <p class="product-description">Classic unisex jersey tee (Bella + Canvas 3001). 100% Airlume cotton.</p>
-                    <div class="product-price">$24.99 – $27.99</div>
-                </div>
-                <button class="buy-btn snipcart-add-item"
-                  data-item-id="victorian-paw-tee"
-                  data-item-price="24.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="Victorian Paw Graphic Tee"
-                  data-item-custom1-name="Size"
-                  data-item-custom1-options="Small|Medium|Large|X-Large|2XL[+3.00]|3XL[+3.00]">
-                  Add to Cart
-                </button>
-            </div>
-
-            <div class="product-card">
-                <div class="product-info">
-                    <h3>🐾 Heritage Café Crewneck</h3>
-                    <p class="product-description">Cozy fleece pullover with classic vintage charm.</p>
-                    <div class="product-price">$54.99</div>
-                </div>
-                <button class="buy-btn snipcart-add-item"
-                  data-item-id="heritage-cafe-crewneck"
-                  data-item-price="54.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="Heritage Café Crewneck"
-                  data-item-custom1-name="Size"
-                  data-item-custom1-options="Small|Medium|Large|X-Large|2XL|3XL">
-                  Add to Cart
-                </button>
-            </div>
-
-            <div class="product-card">
-                <div class="product-info">
-                    <h3>🖤 Nocturne Insulated Tumbler</h3>
-                    <p class="product-description">Double-wall insulated travel mug for hot & cold brews.</p>
-                    <div class="product-price">$49.99</div>
-                </div>
-                <button class="buy-btn snipcart-add-item"
-                  data-item-id="nocturne-insulated-tumbler"
-                  data-item-price="49.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="Nocturne Insulated Tumbler">
-                  Add to Cart
-                </button>
-            </div>
-
-            <div class="product-card">
-                <div class="product-info">
-                    <h3>🐾 Weekend Paw Beverage Sleeve</h3>
-                    <p class="product-description">Custom neoprene can & iced coffee cooler sleeve.</p>
-                    <div class="product-price">$11.99</div>
-                </div>
-                <button class="buy-btn snipcart-add-item"
-                  data-item-id="weekend-paw-sleeve"
-                  data-item-price="11.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="Weekend Paw Beverage Sleeve">
-                  Add to Cart
-                </button>
-            </div>
-
+        <div class="product-card">
+          <div class="product-info">
+            <h3>Victorian Paw Graphic Tee</h3>
+            <p class="product-description">Classic unisex jersey tee (Bella + Canvas 3001). 100% Airlume cotton.</p>
+            <div class="product-price">$24.99 – $27.99</div>
+          </div>
+          <button class="buy-btn snipcart-add-item"
+            data-item-id="victorian-paw-tee"
+            data-item-price="24.99"
+            data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
+            data-item-name="Victorian Paw Graphic Tee"
+            data-item-custom1-name="Size"
+            data-item-custom1-options="Small|Medium|Large|X-Large|2XL[+3.00]|3XL[+3.00]">
+            Add to Cart
+          </button>
         </div>
+
+        <div class="product-card">
+          <div class="product-info">
+            <h3>🐾 Heritage Café Crewneck</h3>
+            <p class="product-description">Cozy fleece pullover with classic vintage charm.</p>
+            <div class="product-price">$54.99</div>
+          </div>
+          <button class="buy-btn snipcart-add-item"
+            data-item-id="heritage-cafe-crewneck"
+            data-item-price="54.99"
+            data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
+            data-item-name="Heritage Café Crewneck"
+            data-item-custom1-name="Size"
+            data-item-custom1-options="Small|Medium|Large|X-Large|2XL|3XL">
+            Add to Cart
+          </button>
+        </div>
+
+        <div class="product-card">
+          <div class="product-info">
+            <h3>🖤 Nocturne Insulated Tumbler</h3>
+            <p class="product-description">Double-wall insulated travel mug for hot & cold brews.</p>
+            <div class="product-price">$49.99</div>
+          </div>
+          <button class="buy-btn snipcart-add-item"
+            data-item-id="nocturne-insulated-tumbler"
+            data-item-price="49.99"
+            data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
+            data-item-name="Nocturne Insulated Tumbler">
+            Add to Cart
+          </button>
+        </div>
+
+        <div class="product-card">
+          <div class="product-info">
+            <h3>🐾 Weekend Paw Beverage Sleeve</h3>
+            <p class="product-description">Custom neoprene can & iced coffee cooler sleeve.</p>
+            <div class="product-price">$11.99</div>
+          </div>
+          <button class="buy-btn snipcart-add-item"
+            data-item-id="weekend-paw-sleeve"
+            data-item-price="11.99"
+            data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
+            data-item-name="Weekend Paw Beverage Sleeve">
+            Add to Cart
+          </button>
+        </div>
+
+      </div>
     </div>
-</div>
+  </div>
 
-<!-- Snipcart Hidden Container -->
-<div hidden id="snipcart" data-api-key="NWE1ZjUzNTctNmZjMi00MWEzLWE0N2ItNTc3ZGRiYTA2NTlmNjM5MjQzNTc0OTQ1OTYxNTg3" data-config-modal-style="side"></div>
+  <footer id="contact">
+    Questions about an order? Reach out anytime — we're brewing something special for the road ahead.
+  </footer>
 
-<!-- JavaScript to handle Dough direct link switching -->
-<script>
-  function updateDoughCheckoutLink() {
-    const selector = document.getElementById('dough-finish-selector');
-    const buyButton = document.getElementById('dough-buy-btn');
-    buyButton.href = selector.value;
-  }
-</script>
+  <!-- Snipcart Hidden Container -->
+  <div hidden id="snipcart" data-api-key="NWE1ZjUzNTctNmZjMi00MWEzLWE0N2ItNTc3ZGRiYTA2NTlmNjM5MjQzNTc0OTQ1OTYxNTg3" data-config-modal-style="side"></div>
+
+  <script>
+    function updateDoughCheckoutLink() {
+      const selector = document.getElementById('dough-finish-selector');
+      const buyButton = document.getElementById('dough-buy-btn');
+      buyButton.href = selector.value;
+    }
+  </script>
 
 </body>
 </html>

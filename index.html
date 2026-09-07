@@ -139,6 +139,19 @@
       font-weight: normal;
     }
 
+    /* Variant Select Input */
+    .variant-select {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      border: 1px solid #e8e3dd;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      color: #2c221e;
+      background-color: #faf8f5;
+      outline: none;
+    }
+
     /* Buttons & Actions */
     .btn, .buy-btn {
       display: block;
@@ -343,6 +356,28 @@
     <div class="category-section">
         <h2 class="category-title">🐶 Merchandise & Goods</h2>
         <div class="grid">
+            <!-- Dough Multi-Finish Custom Item -->
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>✨ Custom Parlor Item</h3>
+                    <p class="product-description">Premium finish item fulfilled directly via Dough & Stripe.</p>
+                    <div class="product-price">Select Finish</div>
+                    
+                    <select id="dough-finish-selector" class="variant-select" onchange="updateDoughCheckoutLink()">
+                      <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D">Glossy Black</option>
+                      <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Gold%22%7D">Gold</option>
+                      <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Standard%20Silver%22%7D">Standard Silver</option>
+                    </select>
+                </div>
+                <a id="dough-buy-btn" 
+                   class="buy-btn" 
+                   href="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                   Buy Now on Dough
+                </a>
+            </div>
+
             <div class="product-card">
                 <div class="product-info">
                     <h3>Victorian Paw Graphic Tee</h3>
@@ -427,6 +462,15 @@
 
 <!-- Snipcart Hidden Container -->
 <div hidden id="snipcart" data-api-key="NWE1ZjUzNTctNmZjMi00MWEzLWE0N2ItNTc3ZGRiYTA2NTlmNjM5MjQzNTc0OTQ1OTYxNTg3" data-config-modal-style="side"></div>
+
+<!-- JavaScript to handle Dough direct link switching -->
+<script>
+  function updateDoughCheckoutLink() {
+    const selector = document.getElementById('dough-finish-selector');
+    const buyButton = document.getElementById('dough-buy-btn');
+    buyButton.href = selector.value;
+  }
+</script>
 
 </body>
 </html>

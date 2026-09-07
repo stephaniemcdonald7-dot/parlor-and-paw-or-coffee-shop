@@ -55,69 +55,25 @@
       padding: 0 20px;
     }
 
-    /* Top navigation */
-    .topnav {
-      position: sticky;
-      top: 0;
-      z-index: 500;
-      background: #110e10;
-      border-bottom: 1px solid var(--border-gold);
-    }
-
-    .topnav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      color: var(--text-light);
-      text-decoration: none;
-      padding-bottom: 4px;
-      border-bottom: 1px solid transparent;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-accent);
-      border-color: var(--gold-accent);
-    }
-
-    .nav-badge {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-badge img {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 1px solid var(--gold-accent);
-    }
-
-    .nav-badge span {
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
-      color: var(--gold-accent);
-      white-space: nowrap;
-    }
+  
+   <!-- Top Navigation -->
+<nav class="topnav">
+  <div class="topnav-inner">
+    <ul class="nav-links">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#bundles">Bundles</a></li>
+      <li><a href="#about">About Us</a></li>
+    </ul>
+    <div class="nav-badge">
+      <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Coffee Co. logo">
+      <span>Parlor & Paw</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#merch">Merch</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
 
     /* Hero Section */
     .hero {
@@ -425,6 +381,65 @@
       color: var(--text-muted);
       background: #110e10;
     }
+    /* About Us Section Styles */
+.about-section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border-gold);
+  background-color: rgba(15, 13, 14, 0.6);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.about-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-gold);
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.about-card img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--border-gold);
+}
+
+.about-caption {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 12px;
+}
+
+.about-text h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: var(--gold-accent);
+  margin-top: 0;
+}
+
+.about-text p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 <body>
@@ -723,6 +738,33 @@
             data-item-name="Weekend Paw Beverage Sleeve">
             Add to Cart
           </button>
+        </div>
+      </div>
+    </div>
+    <!-- About Us Section -->
+    <div class="category-section" id="about">
+      <h2 class="category-title">🐾 About Parlor & Paw</h2>
+      
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>Curious Brews & Dedicated Craft</h3>
+          <p>Founded in 2026, The Parlor & Paw Coffee Co. brings specialty cold brews, rich roasts, and artisanal accessories straight to your door. We blend a dark, vintage parlor aesthetic with a passion for high-quality coffee and animal rescue, crafting every roast with character and care.</p>
+        </div>
+        <div class="about-card">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Logo">
+          <div class="about-caption">Our official logo featuring Barry, Chief Executive Pup.</div>
+        </div>
+      </div>
+
+      <div class="about-grid" style="margin-top: 50px;">
+        <div class="about-card">
+          <!-- Replace URL below with direct image host link for Barry's photo if uploaded -->
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Barry the Bug-Chi">
+          <div class="about-caption">The real-life Barry showing off his bow tie.</div>
+        </div>
+        <div class="about-text">
+          <h3>Meet Barry: The Inspiration Behind the Logo</h3>
+          <p>The dapper pup featured on our logo is <strong>Barry</strong>, our Bug-Chi (Boston Terrier, Pug & Chihuahua mix). With his striking blue eyes, perky ears, and bow tie, Barry inspires our mission: bringing warmth, personality, and exceptional coffee to fellow pet lovers everywhere.</p>
         </div>
       </div>
     </div>

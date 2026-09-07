@@ -426,6 +426,79 @@
       font-style: italic;
       color: var(--text-muted);
     }
+    .signatures {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.carousel-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.signature-frame.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.signature-frame img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.signature-frame:hover img {
+  transform: scale(1.03);
+}
+
+.signature-frame figcaption {
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Arrow Navigation Styling */
+.carousel-arrow {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  transition: background 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
   </style>
 </head>
 <body>
@@ -459,27 +532,47 @@
 
   <!-- Signatures preview strip -->
   <section class="signatures">
-    <div class="signatures-title">Our Signatures</div>
-    <div class="signatures-sub">A taste of what's brewing</div>
-    <div class="signatures-grid">
-      <figure class="signature-frame">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
-        <figcaption>Cold Brews</figcaption>
-      </figure>
-      <figure class="signature-frame">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Whole bean coffee">
-        <figcaption>Whole Bean Coffee</figcaption>
-      </figure>
-      <figure class="signature-frame">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla bean syrup">
-        <figcaption>Syrups & Elixirs</figcaption>
-      </figure>
-      <figure class="signature-frame">
-        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Energy strips and elixirs">
-        <figcaption>Energy & Boosts</figcaption>
-      </figure>
+  <div class="signatures-title">Our Signatures</div>
+  <div class="signatures-sub">A taste of what's brewing</div>
+  
+  <div class="carousel-wrapper">
+    <button class="carousel-arrow prev-btn" aria-label="Previous slide">&#10094;</button>
+    
+    <div class="carousel-track-container">
+      <div class="carousel-track">
+        
+        <!-- Cold Brews -->
+        <a href="#shop" class="signature-frame carousel-slide">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature cold brew">
+          <figcaption>Cold Brews</figcaption>
+        </a>
+
+        <!-- Whole Bean Coffee -->
+        <a href="#shop" class="signature-frame carousel-slide">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Whole bean coffee">
+          <figcaption>Whole Bean Coffee</figcaption>
+        </a>
+
+        <!-- Syrups & Elixirs -->
+        <a href="#shop" class="signature-frame carousel-slide">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla bean syrup">
+          <figcaption>Syrups & Elixirs</figcaption>
+        </a>
+
+        <!-- Energy & Boosts -->
+        <a href="#shop" class="signature-frame carousel-slide">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/yX7vxFT9/model1-2026-08-28T05-04-47-426Z.webp" alt="Energy strips and elixirs">
+          <figcaption>Energy & Boosts</figcaption>
+        </a>
+
+      </div>
     </div>
-  </section>
+
+    <button class="carousel-arrow next-btn" aria-label="Next slide">&#10095;</button>
+  </div>
+</section>
+
+<div class="container" id="shop">
 
   <div class="container" id="shop">
 

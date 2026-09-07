@@ -33,12 +33,17 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--bg-dark);
-      background-image: radial-gradient(circle at 50% 0%, #1f1613 0%, var(--bg-dark) 70%);
+      background-color: #0b0705;
+      background-image: 
+        radial-gradient(circle at center, rgba(30, 20, 15, 0.2) 0%, rgba(5, 3, 2, 0.9) 100%),
+        url('dark-damask-tile.png'); /* Replace with your seamless damask pattern */
+      background-repeat: no-repeat, repeat;
+      background-attachment: fixed;
+      background-size: cover, auto;
       margin: 0;
       padding: 0;
       font-family: 'Montserrat', sans-serif;
-      color: var(--text-light);
+      color: #f0e6d2;
     }
 
     a { color: inherit; }
@@ -51,19 +56,14 @@
 
     /* Top navigation */
     .top-nav {
-  /* Replace with your seamless dark wood texture image file */
-  background-image: url('dark-wood-tile.jpg');
-  background-repeat: repeat;
-  background-position: top center;
-  
-  /* Adds dark vignette/shadowing across the top and bottom */
-  box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.8), 
-              inset 0 -10px 15px rgba(0, 0, 0, 0.8);
-              
-  /* The thin gold dividing line at the bottom */
-  border-bottom: 1px solid #c5a059; 
-  padding: 15px 0;
-}
+      background-image: url('dark-wood-tile.jpg');
+      background-repeat: repeat;
+      background-position: top center;
+      box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.8), 
+                  inset 0 -10px 15px rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid #c5a059; 
+      padding: 15px 0;
+    }
 
     .nav-links {
       display: flex;
@@ -398,8 +398,8 @@
 <body>
 
   <!-- Top Navigation -->
-  <nav class="topnav">
-    <div class="topnav-inner">
+  <nav class="top-nav">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
       <ul class="nav-links">
         <li><a href="#shop">Shop</a></li>
         <li><a href="#bundles">Bundles</a></li>
@@ -699,18 +699,6 @@
       buyButton.href = selector.value;
     }
   </script>
-body {
-  background-color: #0b0705;
-  
-  /* Layers a dark radial gradient OVER the repeating damask pattern */
-  background-image: 
-    radial-gradient(circle at center, rgba(30, 20, 15, 0.2) 0%, rgba(5, 3, 2, 0.9) 100%),
-    url('dark-damask-tile.png'); /* Replace with your seamless damask pattern */
-    
-  background-repeat: no-repeat, repeat;
-  background-attachment: fixed; /* Keeps pattern fixed while scrolling */
-  background-size: cover, auto;
-  color: #f0e6d2;
-}
+
 </body>
 </html>

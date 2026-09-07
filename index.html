@@ -2,23 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parlor & Paw Coffee Co.</title>
   
   <style>
-    /* Container & Section Setup */
-    .category-section {
+    /* Global & Container Setup */
+    body {
+      background-color: #faf8f5;
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #2c221e;
+    }
+
+    .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #3d2b1f;
+      margin-bottom: 30px;
+    }
+
+    .category-section {
+      margin-bottom: 40px;
     }
 
     .category-title {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       color: #2c221e;
       border-bottom: 2px solid #e2d7cd;
       padding-bottom: 8px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     /* Storefront Grid Layout */
@@ -28,8 +47,8 @@
       gap: 20px;
     }
 
-    /* Card Design */
-    .product-card {
+    /* Unified Card Design (Applies to .card and .product-card) */
+    .card, .product-card {
       background: #ffffff;
       border: 1px solid #e8e3dd;
       border-radius: 12px;
@@ -41,39 +60,66 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .product-card:hover {
+    .card:hover, .product-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
-    .product-info h3 {
+    /* Featured Bundle Styling */
+    .featured-card {
+      border: 2px solid #3d2b1f;
+      background: #fdfbf7;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #3d2b1f;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* Headings & Descriptions */
+    .card h3, .product-info h3 {
       font-size: 1.15rem;
       color: #1a1a1a;
       margin: 0 0 8px 0;
     }
 
-    .product-description {
+    .description, .product-description {
       font-size: 0.88rem;
       color: #666666;
       margin: 0 0 12px 0;
       line-height: 1.4;
     }
 
-    .product-price {
+    /* Price Styling */
+    .price, .product-price {
       font-size: 1.25rem;
       font-weight: 700;
       color: #3d2b1f;
       margin-bottom: 16px;
     }
 
-    /* Button & Action Styling */
+    .price del {
+      font-size: 0.95rem;
+      color: #999999;
+      margin-left: 8px;
+      font-weight: normal;
+    }
+
+    /* Buttons & Actions */
     .button-group {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
 
-    .buy-btn {
+    .btn, .buy-btn {
       display: block;
       text-align: center;
       background-color: #3d2b1f; /* Primary Coffee Brown */
@@ -86,7 +132,7 @@
       transition: background-color 0.2s ease;
     }
 
-    .buy-btn:hover {
+    .btn:hover, .buy-btn:hover {
       background-color: #241912;
     }
 
@@ -112,7 +158,7 @@
                 <div>
                     <span class="badge">Best Value</span>
                     <h3>🐾 The Pawlor Trio Bundle</h3>
-                    <div class="price">$54.99<del>$86.97</del></div>
+                    <div class="price">$54.99 <del>$86.97</del></div>
                     <div class="description">
                         Includes the Victorian Paw Graphic Tee, Nocturne Insulated Tumbler, and Weekend Paw Beverage Sleeve.
                     </div>
@@ -131,49 +177,49 @@
                     <h3>🐾 The Pawlor Sampler — 4-Pack</h3>
                     <div class="price">$24.99</div>
                 </div>
-                <a href="https://parlorpawcoffeeco.dough.do/shop/ObRWMZpX" target="_blank" class="btn">Buy on Dough</a>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/ObRWMZpX" target="_blank" class="btn secondary-btn">Buy on Dough</a>
             </div>
             <div class="card">
                 <div>
                     <h3>☕ Salted Caramel Cold Brew</h3>
                     <div class="price">$4.99</div>
                 </div>
-                <a href="https://parlorpawcoffeeco.dough.do/shop/Jkky0FiF" target="_blank" class="btn">Buy on Dough</a>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/Jkky0FiF" target="_blank" class="btn secondary-btn">Buy on Dough</a>
             </div>
             <div class="card">
                 <div>
                     <h3>🐾 Brown Sugar Bark & Spice</h3>
                     <div class="price">$4.99</div>
                 </div>
-                <a href="https://parlorpawcoffeeco.dough.do/shop/qZKKRTiU" target="_blank" class="btn">Buy on Dough</a>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/qZKKRTiU" target="_blank" class="btn secondary-btn">Buy on Dough</a>
             </div>
             <div class="card">
                 <div>
                     <h3>👑 The Duchess’s Vanilla Cream</h3>
                     <div class="price">$6.79</div>
                 </div>
-                <a href="https://parlorpawcoffeeco.dough.do/shop/oqFFbKGj" target="_blank" class="btn">Buy on Dough</a>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/oqFFbKGj" target="_blank" class="btn secondary-btn">Buy on Dough</a>
             </div>
             <div class="card">
                 <div>
                     <h3>🖤 The Velvet Paw Cold Brew</h3>
                     <div class="price">$4.99</div>
                 </div>
-                <a href="https://parlorpawcoffeeco.dough.do/shop/bZByCdW6" target="_blank" class="btn">Buy on Dough</a>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/bZByCdW6" target="_blank" class="btn secondary-btn">Buy on Dough</a>
             </div>
             <div class="card">
                 <div>
                     <h3>🌙 Signature Cold Brew — 12-Pack</h3>
                     <div class="price">$69.99</div>
                 </div>
-                <a href="https://parlorpawcoffeeco.dough.do/shop/sPulEtqm" target="_blank" class="btn">Buy on Dough</a>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/sPulEtqm" target="_blank" class="btn secondary-btn">Buy on Dough</a>
             </div>
             <div class="card">
                 <div>
                     <h3>🍦 Vanilla Bean Syrup</h3>
                     <div class="price">$21.99</div>
                 </div>
-                <a href="https://parlorpawcoffeeco.dough.do/shop/mVhJyJR8" target="_blank" class="btn">Buy on Dough</a>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/mVhJyJR8" target="_blank" class="btn secondary-btn">Buy on Dough</a>
             </div>
         </div>
     </div>
@@ -187,70 +233,71 @@
                     <h3>⚡ Parlor & Paw Energy Strips</h3>
                     <div class="price">$14.00</div>
                 </div>
-                <a href="https://parlorpawcoffeeco.dough.do/shop/yX7vxFT9" target="_blank" class="btn">Buy on Dough</a>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/yX7vxFT9" target="_blank" class="btn secondary-btn">Buy on Dough</a>
             </div>
             <div class="card">
                 <div>
                     <h3>🫐 Blackberry Vanilla Elixir</h3>
                     <div class="price">$90.30</div>
                 </div>
-                <a href="https://parlorpawcoffeeco.dough.do/shop/JbBEpcYt" target="_blank" class="btn">Buy on Dough</a>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/JbBEpcYt" target="_blank" class="btn secondary-btn">Buy on Dough</a>
             </div>
         </div>
     </div>
 
+    <!-- Merchandise Section -->
     <div class="category-section">
-  <h2 class="category-title">🐶 Merchandise & Goods</h2>
-  
-  <div class="grid">
-    <div class="product-card">
-      <div class="product-info">
-        <h3>Victorian Paw Graphic Tee</h3>
-        <p class="product-description">Classic unisex jersey tee (Bella + Canvas 3001). 100% Airlume cotton.</p>
-        <div class="product-price">$24.99 – $27.99</div>
-      </div>
-      <div class="button-group">
-        <a href="https://buy.stripe.com/3cI14pdbxfPN8hsca82wU03" class="buy-btn" target="_blank">Buy S – XL ($24.99)</a>
-        <a href="https://buy.stripe.com/3cI4gB5J59rp41ceig2wU08" class="buy-btn secondary-btn" target="_blank">Buy 2XL – 3XL ($27.99)</a>
-      </div>
-    </div>
+        <h2 class="category-title">🐶 Merchandise & Goods</h2>
+        <div class="grid">
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>Victorian Paw Graphic Tee</h3>
+                    <p class="product-description">Classic unisex jersey tee (Bella + Canvas 3001). 100% Airlume cotton.</p>
+                    <div class="product-price">$24.99 – $27.99</div>
+                </div>
+                <div class="button-group">
+                    <a href="https://buy.stripe.com/3cI14pdbxfPN8hsca82wU03" class="buy-btn" target="_blank">Buy S – XL ($24.99)</a>
+                    <a href="https://buy.stripe.com/3cI4gB5J59rp41ceig2wU08" class="buy-btn secondary-btn" target="_blank">Buy 2XL – 3XL ($27.99)</a>
+                </div>
+            </div>
 
-    <div class="product-card">
-      <div class="product-info">
-        <h3>🐾 Heritage Café Crewneck</h3>
-        <p class="product-description">Cozy fleece pullover with classic vintage charm.</p>
-        <div class="product-price">$54.99</div>
-      </div>
-      <a href="https://buy.stripe.com/7sY7sN6N99rp69keig2wU06" target="_blank" class="buy-btn">Order Now</a>
-    </div>
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>🐾 Heritage Café Crewneck</h3>
+                    <p class="product-description">Cozy fleece pullover with classic vintage charm.</p>
+                    <div class="product-price">$54.99</div>
+                </div>
+                <a href="https://buy.stripe.com/7sY7sN6N99rp69keig2wU06" target="_blank" class="buy-btn">Order Now</a>
+            </div>
 
-    <div class="product-card">
-      <div class="product-info">
-        <h3>🖤 Nocturne Insulated Tumbler</h3>
-        <p class="product-description">Double-wall insulated travel mug for hot & cold brews.</p>
-        <div class="product-price">$49.99</div>
-      </div>
-      <a href="https://buy.stripe.com/6oU7sNdbx6fdapA7TS2wU04" target="_blank" class="buy-btn">Order Now</a>
-    </div>
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>🖤 Nocturne Insulated Tumbler</h3>
+                    <p class="product-description">Double-wall insulated travel mug for hot & cold brews.</p>
+                    <div class="product-price">$49.99</div>
+                </div>
+                <a href="https://buy.stripe.com/6oU7sNdbx6fdapA7TS2wU04" target="_blank" class="buy-btn">Order Now</a>
+            </div>
 
-    <div class="product-card">
-      <div class="product-info">
-        <h3>🐾 Weekend Paw Beverage Sleeve</h3>
-        <p class="product-description">Custom neoprene can & iced coffee cooler sleeve.</p>
-        <div class="product-price">$11.99</div>
-      </div>
-      <a href="https://buy.stripe.com/5kQ9AV6N96fd41cb642wU05" target="_blank" class="buy-btn">Order Now</a>
-    </div>
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>🐾 Weekend Paw Beverage Sleeve</h3>
+                    <p class="product-description">Custom neoprene can & iced coffee cooler sleeve.</p>
+                    <div class="product-price">$11.99</div>
+                </div>
+                <a href="https://buy.stripe.com/5kQ9AV6N96fd41cb642wU05" target="_blank" class="buy-btn">Order Now</a>
+            </div>
 
-    <div class="product-card">
-      <div class="product-info">
-        <h3>🌙 Midnight Parlor Silk</h3>
-        <p class="product-description">Signature coffee roast whole beans / specialty blend.</p>
-        <div class="product-price">$6.99</div>
-      </div>
-      <a href="https://parlorpawcoffeeco.dough.do/shop/qROa5bUq" target="_blank" class="buy-btn secondary-btn">Buy on Dough</a>
+            <div class="product-card">
+                <div class="product-info">
+                    <h3>🌙 Midnight Parlor Silk</h3>
+                    <p class="product-description">Signature coffee roast whole beans / specialty blend.</p>
+                    <div class="product-price">$6.99</div>
+                </div>
+                <a href="https://parlorpawcoffeeco.dough.do/shop/qROa5bUq" target="_blank" class="buy-btn secondary-btn">Buy on Dough</a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 </body>

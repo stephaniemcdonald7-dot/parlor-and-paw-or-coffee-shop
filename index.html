@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Parlor & Paw Coffee Co.</title>
   
-  <!-- Snipcart CSS & JS -->
+  <!-- Snipcart CSS & JS (still used for Bundles & Merchandise) -->
   <link rel="preconnect" href="https://app.snipcart.com">
   <link rel="preconnect" href="https://cdn.snipcart.com">
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
@@ -181,6 +181,15 @@
     .secondary-btn:hover {
       background-color: #4f3f36;
     }
+
+    .product-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      background-color: #f0ece5;
+    }
   </style>
 </head>
 <body>
@@ -188,13 +197,13 @@
 <div class="container">
     <div class="header-row">
       <h1>The Parlor & Paw Coffee Co.</h1>
-      <!-- Floating Cart Button -->
+      <!-- Floating Cart Button (still used for Bundles & Merchandise via Snipcart) -->
       <button class="snipcart-checkout">
         🛒 Cart (<span class="snipcart-items-count">0</span>)
       </button>
     </div>
 
-    <!-- Bundles Section -->
+    <!-- Bundles Section (left as Snipcart — mixed bundle of coffee + merch) -->
     <div class="category-section">
         <h2 class="category-title">🎁 Special Bundles</h2>
         <div class="grid">
@@ -221,150 +230,162 @@
         </div>
     </div>
 
-    <!-- Coffee & Cold Brews Section -->
+    <!-- Coffee & Cold Brews Section — now all Dough buy links -->
     <div class="category-section">
         <h2 class="category-title">☕ Coffee & Cold Brews</h2>
         <div class="grid">
+
             <div class="card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="The Pawlor Sampler — 4-Pack">
                 <div>
                     <h3>🐾 The Pawlor Sampler — 4-Pack</h3>
                     <div class="price">$24.99</div>
                 </div>
-                <button class="btn snipcart-add-item"
-                  data-item-id="pawlor-sampler-4pack"
-                  data-item-price="24.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="The Pawlor Sampler — 4-Pack">
-                  Add to Cart
-                </button>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>☕ Salted Caramel Cold Brew</h3>
-                    <div class="price">$4.99</div>
-                </div>
-                <button class="btn snipcart-add-item"
-                  data-item-id="salted-caramel-cold-brew"
-                  data-item-price="4.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="Salted Caramel Cold Brew">
-                  Add to Cart
-                </button>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>🐾 Brown Sugar Bark & Spice</h3>
-                    <div class="price">$4.99</div>
-                </div>
-                <button class="btn snipcart-add-item"
-                  data-item-id="brown-sugar-bark-spice"
-                  data-item-price="4.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="Brown Sugar Bark & Spice">
-                  Add to Cart
-                </button>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>👑 The Duchess’s Vanilla Cream</h3>
-                    <div class="price">$6.79</div>
-                </div>
-                <button class="btn snipcart-add-item"
-                  data-item-id="duchesses-vanilla-cream"
-                  data-item-price="6.79"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="The Duchess’s Vanilla Cream">
-                  Add to Cart
-                </button>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>🖤 The Velvet Paw Cold Brew</h3>
-                    <div class="price">$4.99</div>
-                </div>
-                <button class="btn snipcart-add-item"
-                  data-item-id="velvet-paw-cold-brew"
-                  data-item-price="4.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="The Velvet Paw Cold Brew">
-                  Add to Cart
-                </button>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>🌙 Signature Cold Brew — 12-Pack</h3>
-                    <div class="price">$69.99</div>
-                </div>
-                <button class="btn snipcart-add-item"
-                  data-item-id="signature-cold-brew-12pack"
-                  data-item-price="69.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="Signature Cold Brew — 12-Pack">
-                  Add to Cart
-                </button>
-            </div>
-            <div class="card">
-                <div>
-                    <h3>🍦 Vanilla Bean Syrup</h3>
-                    <div class="price">$21.99</div>
-                </div>
-                <button class="btn snipcart-add-item"
-                  data-item-id="vanilla-bean-syrup"
-                  data-item-price="21.99"
-                  data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
-                  data-item-name="Vanilla Bean Syrup">
-                  Add to Cart
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Energy & Boosts Section -->
-    <div class="category-section">
-        <h2 class="category-title">⚡ Energy & Boosts</h2>
-        <div class="grid">
-            <div class="card">
-                <div>
-                    <h3>⚡ Parlor & Paw Energy Strips</h3>
-                    <div class="price">$14.00</div>
-               
-
- <a id="dough-buy-btn" 
-                   class="buy-btn" 
-                   href="https://app.dough.do/api/buy/yX7vxFT9" 
-                   target="_blank" 
+                <a class="buy-btn"
+                   href="https://app.dough.do/api/buy/ObRWMZpX"
+                   target="_blank"
                    rel="noopener noreferrer">
                    Buy Now on Dough
                 </a>
             </div>
-           <div class="grid">
+
+            <div class="card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Salted Caramel Cold Brew">
+                <div>
+                    <h3>☕ Salted Caramel Cold Brew</h3>
+                    <div class="price">$4.99</div>
+                </div>
+                <a class="buy-btn"
+                   href="https://app.dough.do/api/buy/Jkky0FiF"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   Buy Now on Dough
+                </a>
+            </div>
+
+            <div class="card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Brown Sugar Bark & Spice">
+                <div>
+                    <h3>🐾 Brown Sugar Bark & Spice</h3>
+                    <div class="price">$4.99</div>
+                </div>
+                <a class="buy-btn"
+                   href="https://app.dough.do/api/buy/qZKKRTiU"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   Buy Now on Dough
+                </a>
+            </div>
+
+            <div class="card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="The Duchess's Vanilla Cream">
+                <div>
+                    <h3>👑 The Duchess's Vanilla Cream</h3>
+                    <div class="price">$6.79</div>
+                </div>
+                <a class="buy-btn"
+                   href="https://app.dough.do/api/buy/oqFFbKGj"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   Buy Now on Dough
+                </a>
+            </div>
+
+            <div class="card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="The Velvet Paw Cold Brew">
+                <div>
+                    <h3>🖤 The Velvet Paw Cold Brew</h3>
+                    <div class="price">$4.99</div>
+                </div>
+                <a class="buy-btn"
+                   href="https://app.dough.do/api/buy/bZByCdW6"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   Buy Now on Dough
+                </a>
+            </div>
+
+            <div class="card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Signature Cold Brew — 12-Pack">
+                <div>
+                    <h3>🌙 Signature Cold Brew — 12-Pack</h3>
+                    <div class="price">$69.99</div>
+                </div>
+                <a class="buy-btn"
+                   href="https://app.dough.do/api/buy/sPulEtqm"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   Buy Now on Dough
+                </a>
+            </div>
+
+            <div class="card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla Bean Syrup">
+                <div>
+                    <h3>🍦 Vanilla Bean Syrup</h3>
+                    <div class="price">$21.99</div>
+                </div>
+                <a class="buy-btn"
+                   href="https://app.dough.do/api/buy/mVhJyJR8"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   Buy Now on Dough
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Energy & Boosts Section — already Dough, cleaned up structure -->
+    <div class="category-section">
+        <h2 class="category-title">⚡ Energy & Boosts</h2>
+        <div class="grid">
+
+            <div class="card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Energy Strips">
+                <div>
+                    <h3>⚡ Parlor & Paw Energy Strips</h3>
+                    <div class="price">$14.00</div>
+                </div>
+                <a class="buy-btn"
+                   href="https://app.dough.do/api/buy/yX7vxFT9"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                   Buy Now on Dough
+                </a>
+            </div>
+
             <!-- Dough Multi-Finish Custom Item -->
             <div class="product-card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Blackberry Vanilla Elixir">
                 <div class="product-info">
                     <h3>🫐 Blackberry Vanilla Elixir</h3>
                     <p class="product-description">Premium finish item fulfilled directly via Dough & Stripe.</p>
                     <div class="product-price">Select Finish</div>
-                    
+
                     <select id="dough-finish-selector" class="variant-select" onchange="updateDoughCheckoutLink()">
                       <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D">Glossy Black</option>
                       <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Gold%22%7D">Gold</option>
                       <option value="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Standard%20Silver%22%7D">Standard Silver</option>
                     </select>
                 </div>
-                <a id="dough-buy-btn" 
-                   class="buy-btn" 
-                   href="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D" 
-                   target="_blank" 
+                <a id="dough-buy-btn"
+                   class="buy-btn"
+                   href="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D"
+                   target="_blank"
                    rel="noopener noreferrer">
                    Buy Now on Dough
                 </a>
             </div>
+
+        </div>
     </div>
 
-    <!-- Merchandise Section -->
+    <!-- Merchandise Section (left as Snipcart, untouched) -->
     <div class="category-section">
         <h2 class="category-title">🐶 Merchandise & Goods</h2>
-      
+        <div class="grid">
+
             <div class="product-card">
                 <div class="product-info">
                     <h3>Victorian Paw Graphic Tee</h3>
@@ -443,6 +464,7 @@
                   Add to Cart
                 </button>
             </div>
+
         </div>
     </div>
 </div>

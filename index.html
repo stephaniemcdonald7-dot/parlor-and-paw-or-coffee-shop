@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Parlor & Paw Coffee Co. — Online Shop</title>
 
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon" type="image/jpeg" href="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg">
+  <link rel="apple-touch-icon" href="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- Snipcart CSS & JS -->
+  <!-- Snipcart CSS & JS (Bundles & Merchandise only) -->
   <link rel="preconnect" href="https://app.snipcart.com">
   <link rel="preconnect" href="https://cdn.snipcart.com">
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
@@ -19,42 +23,28 @@
   <style>
     :root {
       --bg-dark: #0f0d0e;
-      --bg-card: #181416;
+      --bg-card: #201a1c; /* Solid dark mahogany tone for product cards */
+      --bg-card-featured: #2b1f1a; /* Solid featured card tone */
       --mahogany: #2b1810;
       --gold-accent: #c5a059;
       --gold-hover: #e0b86c;
       --text-light: #ece3d4;
       --text-muted: #a69888;
-      --border-gold: rgba(197, 160, 89, 0.3);
-      --border-gold-strong: rgba(197, 160, 89, 0.7);
+      --border-gold: rgba(197, 160, 89, 0.4);
+      --border-gold-strong: rgba(197, 160, 89, 0.8);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
-    /* Relative path for local & GitHub subfolder deployment */
+    /* Page Body Background */
     body {
-      background-color: #0b0705;
-      background-image: 
-        radial-gradient(circle at center, rgba(30, 20, 15, 0.05) 0%, rgba(5, 3, 2, 0.35) 100%),
-        url('./dark-damask-tile.png');
-      background-repeat: repeat;
-      background-attachment: fixed;
-      color: #f0e6d2;
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 50% 0%, #1f1613 0%, var(--bg-dark) 70%);
       margin: 0;
       padding: 0;
       font-family: 'Montserrat', sans-serif;
-    }
-
-    /* Relative path for navigation wood background */
-    .top-nav {
-      background-image: url('./dark-wood-tile.png');
-      background-repeat: repeat;
-      background-position: top center;
-      box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.8), 
-                  inset 0 -10px 15px rgba(0, 0, 0, 0.8);
-      border-bottom: 1px solid #c5a059; 
-      padding: 12px 0;
+      color: var(--text-light);
     }
 
     a { color: inherit; }
@@ -63,6 +53,25 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+    }
+
+    /* Top navigation */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      background: #110e10;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .topnav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .nav-links {
@@ -75,7 +84,7 @@
 
     .nav-links a {
       font-family: 'Cinzel', serif;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       letter-spacing: 1px;
       color: var(--text-light);
       text-decoration: none;
@@ -89,39 +98,28 @@
       border-color: var(--gold-accent);
     }
 
-    /* Enlarged & Prominent Brand Badge */
     .nav-badge {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
     }
 
     .nav-badge img {
-      width: 72px;
-      height: 72px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      border: 2px solid var(--gold-accent);
-      box-shadow: 0 0 16px rgba(197, 160, 89, 0.6);
-      object-fit: cover;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .nav-badge img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 22px rgba(197, 160, 89, 0.9);
+      border: 1px solid var(--gold-accent);
     }
 
     .nav-badge span {
       font-family: 'Cinzel', serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
       color: var(--gold-accent);
       white-space: nowrap;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
 
-    /* Hero */
+    /* Hero Section */
     .hero {
       position: relative;
       padding: 90px 20px 70px;
@@ -140,6 +138,7 @@
       padding: 6px 16px;
       border-radius: 20px;
       margin-bottom: 24px;
+      background-color: var(--bg-card);
     }
 
     h1.hero-title {
@@ -198,6 +197,20 @@
       padding: 40px 20px;
     }
 
+    .signatures-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: var(--gold-accent);
+      margin-bottom: 4px;
+    }
+
+    .signatures-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
     .auto-scroll-container {
       width: 100%;
       overflow-x: auto;
@@ -228,24 +241,31 @@
       flex: 0 0 auto;
       width: 220px;
       text-align: center;
-      transition: transform 0.2s ease;
+      background: var(--bg-card);
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-gold);
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
-    .signature-card:hover { transform: translateY(-4px); }
+    .signature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-accent);
+    }
 
     .signature-card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     }
 
     .signature-card span {
       display: block;
       margin-top: 10px;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--text-light);
     }
 
@@ -276,27 +296,30 @@
       gap: 25px;
     }
 
+    /* Product Cards with SOLID background color */
     .card, .product-card {
-      background: var(--bg-card);
+      background-color: var(--bg-card) !important; /* Solid color */
+      background-image: none !important;
       border: 1px solid var(--border-gold);
-      border-radius: 4px;
+      border-radius: 6px;
       padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover, .product-card:hover {
       transform: translateY(-5px);
       border-color: var(--gold-accent);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197, 160, 89, 0.15);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.9), 0 0 15px rgba(197, 160, 89, 0.2);
     }
 
     .featured-card {
+      background-color: var(--bg-card-featured) !important; /* Solid color */
+      background-image: none !important;
       border: 1px solid var(--gold-accent);
-      background: linear-gradient(145deg, #221a17 0%, var(--bg-card) 100%);
     }
 
     .badge {
@@ -317,14 +340,11 @@
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 2px;
+      border-radius: 4px;
       margin-bottom: 15px;
       border: 1px solid var(--border-gold);
-      filter: brightness(0.9) contrast(1.05);
-      transition: filter 0.3s ease;
+      background-color: #0d0b0c;
     }
-
-    .card:hover .product-img, .product-card:hover .product-img { filter: brightness(1); }
 
     .card h3, .product-info h3 {
       font-family: 'Cinzel', serif;
@@ -362,11 +382,11 @@
       padding: 10px;
       margin-bottom: 15px;
       border: 1px solid var(--border-gold);
-      border-radius: 2px;
+      border-radius: 4px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.85rem;
       color: var(--text-light);
-      background-color: var(--bg-dark);
+      background-color: #120e10;
       outline: none;
       cursor: pointer;
     }
@@ -384,7 +404,7 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      border-radius: 2px;
+      border-radius: 4px;
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
@@ -393,7 +413,7 @@
     .btn:hover, .buy-btn:hover {
       background-color: var(--gold-accent);
       color: #000;
-      box-shadow: 0 0 10px rgba(197, 160, 89, 0.4);
+      box-shadow: 0 0 12px rgba(197, 160, 89, 0.4);
     }
 
     footer {
@@ -403,30 +423,15 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       color: var(--text-muted);
-    }
-
-    @media (max-width: 768px) {
-      .top-nav .container {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .nav-links { gap: 18px; }
-
-      .nav-badge img {
-        width: 58px;
-        height: 58px;
-      }
-
-      h1.hero-title { font-size: 2rem; }
+      background: #110e10;
     }
   </style>
 </head>
 <body>
 
   <!-- Top Navigation -->
-  <nav class="top-nav">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+  <nav class="topnav">
+    <div class="topnav-inner">
       <ul class="nav-links">
         <li><a href="#shop">Shop</a></li>
         <li><a href="#bundles">Bundles</a></li>

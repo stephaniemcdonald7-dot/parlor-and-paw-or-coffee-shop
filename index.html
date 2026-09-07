@@ -3,138 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parlor & Paw Coffee Co.</title>
+  <title>The Parlor & Paw Coffee Co.</title>
   
-  <!-- Snipcart CSS & JS (still used for Bundles & Merchandise) -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Snipcart CSS & JS -->
   <link rel="preconnect" href="https://app.snipcart.com">
   <link rel="preconnect" href="https://cdn.snipcart.com">
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.css" />
   <script async src="https://cdn.snipcart.com/themes/v3.4.0/default/snipcart.js"></script>
 
   <style>
-    /* Global & Container Setup */
+    /* Victorian Goth Color Palette & Styling */
+    :root {
+      --bg-dark: #0f0d0e;
+      --bg-card: #181416;
+      --mahogany: #2b1810;
+      --gold-accent: #c5a059;
+      --gold-hover: #e0b86c;
+      --text-light: #ece3d4;
+      --text-muted: #a69888;
+      --border-gold: rgba(197, 160, 89, 0.3);
+      --border-gold-strong: rgba(197, 160, 89, 0.7);
+    }
+
+    /* Global Setup */
     body {
-      background-color: #faf8f5;
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 50% 0%, #1f1613 0%, var(--bg-dark) 70%);
       margin: 0;
       padding: 0;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      color: #2c221e;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-light);
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
 
-    .header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
+    /* Victorian Header Layout */
+    .header-brand {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .header-brand::after {
+      content: '❖';
+      position: absolute;
+      bottom: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-dark);
+      padding: 0 15px;
+      color: var(--gold-accent);
+      font-size: 1.1rem;
+    }
+
+    .logo-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-accent);
+      box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+      margin-bottom: 15px;
     }
 
     h1 {
-      font-size: 2.2rem;
-      color: #3d2b1f;
-      margin: 0;
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold-accent);
+      margin: 10px 0 5px 0;
+      text-transform: uppercase;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
     }
 
-    /* Cart Summary Button */
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin: 0 0 20px 0;
+    }
+
+    /* Floating Cart Button */
+    .snipcart-checkout-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
     .snipcart-checkout {
-      background-color: #3d2b1f;
-      color: #ffffff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 20px;
+      background: var(--mahogany);
+      color: var(--gold-accent);
+      border: 1px solid var(--gold-accent);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
       font-weight: 600;
+      letter-spacing: 1px;
       cursor: pointer;
       display: flex;
       align-items: center;
       gap: 8px;
-      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      transition: all 0.3s ease;
     }
 
+    .snipcart-checkout:hover {
+      background: var(--gold-accent);
+      color: #000;
+      box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+    }
+
+    /* Category Titles */
     .category-section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .category-title {
-      font-size: 1.5rem;
-      color: #2c221e;
-      border-bottom: 2px solid #e2d7cd;
-      padding-bottom: 8px;
-      margin-bottom: 20px;
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      color: var(--gold-accent);
+      border-bottom: 1px solid var(--border-gold);
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     /* Storefront Grid Layout */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 25px;
     }
 
     /* Unified Card Design */
     .card, .product-card {
-      background: #ffffff;
-      border: 1px solid #e8e3dd;
-      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 4px;
       padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
     }
 
     .card:hover, .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transform: translateY(-5px);
+      border-color: var(--gold-accent);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 15px rgba(197, 160, 89, 0.15);
     }
 
-    /* Featured Bundle Styling */
+    /* Featured Bundle Card */
     .featured-card {
-      border: 2px solid #3d2b1f;
-      background: #fdfbf7;
+      border: 1px solid var(--gold-accent);
+      background: linear-gradient(145deg, #221a17 0%, var(--bg-card) 100%);
     }
 
     .badge {
       display: inline-block;
-      background-color: #3d2b1f;
-      color: #ffffff;
-      font-size: 0.75rem;
+      background: var(--gold-accent);
+      color: #000;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
       font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 1px;
       padding: 4px 8px;
-      border-radius: 4px;
-      margin-bottom: 10px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    /* Images */
+    .product-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 2px;
+      margin-bottom: 15px;
+      border: 1px solid var(--border-gold);
+      filter: brightness(0.9) contrast(1.05);
+      transition: filter 0.3s ease;
+    }
+
+    .card:hover .product-img, .product-card:hover .product-img {
+      filter: brightness(1);
     }
 
     /* Headings & Descriptions */
     .card h3, .product-info h3 {
-      font-size: 1.15rem;
-      color: #1a1a1a;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--text-light);
       margin: 0 0 8px 0;
+      line-height: 1.3;
     }
 
     .description, .product-description {
-      font-size: 0.88rem;
-      color: #666666;
-      margin: 0 0 12px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin: 0 0 15px 0;
       line-height: 1.4;
     }
 
     /* Price Styling */
     .price, .product-price {
-      font-size: 1.25rem;
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
       font-weight: 700;
-      color: #3d2b1f;
+      color: var(--gold-accent);
       margin-bottom: 16px;
     }
 
     .price del {
-      font-size: 0.95rem;
-      color: #999999;
+      font-size: 0.9rem;
+      color: var(--text-muted);
       margin-left: 8px;
       font-weight: normal;
     }
@@ -142,14 +244,20 @@
     /* Variant Select Input */
     .variant-select {
       width: 100%;
-      padding: 8px 10px;
-      margin-bottom: 12px;
-      border: 1px solid #e8e3dd;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      color: #2c221e;
-      background-color: #faf8f5;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid var(--border-gold);
+      border-radius: 2px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      background-color: var(--bg-dark);
       outline: none;
+      cursor: pointer;
+    }
+
+    .variant-select:focus {
+      border-color: var(--gold-accent);
     }
 
     /* Buttons & Actions */
@@ -157,53 +265,48 @@
       display: block;
       width: 100%;
       text-align: center;
-      background-color: #3d2b1f; /* Primary Coffee Brown */
-      color: #ffffff;
-      padding: 10px 14px;
-      border: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-radius: 6px;
+      background-color: var(--mahogany);
+      color: var(--gold-accent);
+      border: 1px solid var(--gold-accent);
+      padding: 12px 14px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 2px;
       cursor: pointer;
-      transition: background-color 0.2s ease;
+      transition: all 0.3s ease;
       box-sizing: border-box;
       text-decoration: none;
     }
 
     .btn:hover, .buy-btn:hover {
-      background-color: #241912;
-    }
-
-    .secondary-btn {
-      background-color: #6c584c; /* Secondary Muted Accent */
-    }
-
-    .secondary-btn:hover {
-      background-color: #4f3f36;
-    }
-
-    .product-img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 12px;
-      background-color: #f0ece5;
+      background-color: var(--gold-accent);
+      color: #000;
+      box-shadow: 0 0 10px rgba(197, 160, 89, 0.4);
     }
   </style>
 </head>
 <body>
 
+<!-- Floating Snipcart Checkout -->
+<div class="snipcart-checkout-container">
+  <button class="snipcart-checkout">
+    🛒 Cart (<span class="snipcart-items-count">0</span>)
+  </button>
+</div>
+
 <div class="container">
-    <div class="header-row">
-      <h1>The Parlor & Paw Coffee Co.</h1>
-      <!-- Floating Cart Button (still used for Bundles & Merchandise via Snipcart) -->
-      <button class="snipcart-checkout">
-        🛒 Cart (<span class="snipcart-items-count">0</span>)
-      </button>
+  
+    <!-- Victorian Goth Header -->
+    <div class="header-brand">
+      <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Logo" class="logo-img">
+      <h1>The Parlor & Paw</h1>
+      <div class="tagline">Craft Coffee & Curiosities for Discriminating Souls</div>
     </div>
 
-    <!-- Bundles Section (left as Snipcart — mixed bundle of coffee + merch) -->
+    <!-- Special Bundles Section -->
     <div class="category-section">
         <h2 class="category-title">🎁 Special Bundles</h2>
         <div class="grid">
@@ -230,7 +333,7 @@
         </div>
     </div>
 
-    <!-- Coffee & Cold Brews Section — now all Dough buy links -->
+    <!-- Coffee & Cold Brews Section -->
     <div class="category-section">
         <h2 class="category-title">☕ Coffee & Cold Brews</h2>
         <div class="grid">
@@ -319,42 +422,42 @@
                 </a>
             </div>
 
-          
-        <!-- Midnight Parlor Silk Card -->
-<div class="product-card">
-    <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Midnight Parlor Silk">
-    <div class="product-info">
-        <h3>🌙 Midnight Parlor Silk</h3>
-        <p class="product-description">Signature coffee roast whole beans / specialty blend.</p>
-        <div class="product-price">$6.99</div>
-    </div>
-    <button class="buy-btn snipcart-add-item"
-        data-item-id="midnight-parlor-silk"
-        data-item-price="6.99"
-        data-item-url="https://parlorpawcoffeeco.dough.do/products/qROa5bUq"
-        data-item-name="Midnight Parlor Silk"
-        data-item-description="Signature coffee roast whole beans / specialty blend.">
-        Buy Now on Dough
-    </button>
-</div>
+            <div class="product-card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/sPulEtqm/model1-2026-09-02T06-37-47-815Z.webp" alt="Midnight Parlor Silk">
+                <div class="product-info">
+                    <h3>🌙 Midnight Parlor Silk</h3>
+                    <p class="product-description">Signature coffee roast whole beans / specialty blend.</p>
+                    <div class="product-price">$6.99</div>
+                </div>
+                <button class="buy-btn snipcart-add-item"
+                    data-item-id="midnight-parlor-silk"
+                    data-item-price="6.99"
+                    data-item-url="https://parlorpawcoffeeco.dough.do/products/qROa5bUq"
+                    data-item-name="Midnight Parlor Silk"
+                    data-item-description="Signature coffee roast whole beans / specialty blend.">
+                    Buy Now on Dough
+                </button>
+            </div>
 
-<!-- Vanilla Bean Syrup Card -->
-<div class="product-card">
-    <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla Bean Syrup">
-    <div class="product-info">
-        <h3>🍦 Vanilla Bean Syrup</h3>
-        <p class="product-description"></p>
-        <div class="product-price">$21.99</div>
-    </div>
-    <a class="buy-btn"
-       href="https://app.dough.do/api/buy/mVhJyJR8"
-       target="_blank"
-       rel="noopener noreferrer">
-        Buy Now on Dough
-    </a>
-</div>
+            <div class="product-card">
+                <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/mVhJyJR8/model1-2026-09-05T03-02-18-667Z.webp" alt="Vanilla Bean Syrup">
+                <div class="product-info">
+                    <h3>🍦 Vanilla Bean Syrup</h3>
+                    <p class="product-description">Artisanal vanilla elixir to sweeten your darkest brews.</p>
+                    <div class="product-price">$21.99</div>
+                </div>
+                <a class="buy-btn"
+                   href="https://app.dough.do/api/buy/mVhJyJR8"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Buy Now on Dough
+                </a>
+            </div>
 
-    <!-- Energy & Boosts Section — already Dough, cleaned up structure -->
+        </div>
+    </div>
+
+    <!-- Energy & Boosts Section -->
     <div class="category-section">
         <h2 class="category-title">⚡ Energy & Boosts</h2>
         <div class="grid">
@@ -373,7 +476,6 @@
                 </a>
             </div>
 
-            <!-- Dough Multi-Finish Custom Item -->
             <div class="product-card">
                 <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Blackberry Vanilla Elixir">
                 <div class="product-info">
@@ -399,7 +501,7 @@
         </div>
     </div>
 
-    <!-- Merchandise Section (left as Snipcart, untouched) -->
+    <!-- Merchandise Section -->
     <div class="category-section">
         <h2 class="category-title">🐶 Merchandise & Goods</h2>
         <div class="grid">
@@ -467,7 +569,6 @@
                   Add to Cart
                 </button>
             </div>
-
 
         </div>
     </div>

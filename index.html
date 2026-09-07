@@ -701,9 +701,33 @@
     </div>
   </div>
 
-  <footer id="contact">
-    Questions about an order? Reach out anytime — we're brewing something special for the road ahead.
-  </footer>
+<body>
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/meaqrpkg" method="POST">
+      
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>
 
   <!-- Snipcart Hidden Container -->
   <div hidden id="snipcart" data-api-key="NWE1ZjUzNTctNmZjMi00MWEzLWE0N2ItNTc3ZGRiYTA2NTlmNjM5MjQzNTc0OTQ1OTYxNTg3" data-config-modal-style="side"></div>

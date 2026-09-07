@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — The Parlor & Paw Coffee Co.</title>
+
+  <!-- Favicon / Browser Tab Icon -->
+  <link rel="icon" type="image/jpeg" href="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg">
+  <link rel="apple-touch-icon" href="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f0d0e;
+      --bg-card: #201a1c;
+      --mahogany: #2b1810;
+      --gold-accent: #c5a059;
+      --gold-hover: #e0b86c;
+      --text-light: #ece3d4;
+      --text-muted: #a69888;
+      --border-gold: rgba(197, 160, 89, 0.4);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 50% 0%, #1f1613 0%, var(--bg-dark) 70%);
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-light);
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    /* Top navigation */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      background: #110e10;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .topnav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: var(--text-light);
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold-accent);
+      border-color: var(--gold-accent);
+    }
+
+    .nav-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-badge img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-accent);
+    }
+
+    .nav-badge span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      color: var(--gold-accent);
+      white-space: nowrap;
+    }
+
+    /* Page Header */
+    .page-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .page-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      color: var(--gold-accent);
+      margin-bottom: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    .page-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+    }
+
+    /* About Content Layout */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .about-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 6px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    .about-card img {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--border-gold);
+    }
+
+    .about-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 12px;
+    }
+
+    .about-text h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      color: var(--gold-accent);
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    footer {
+      border-top: 1px solid var(--border-gold);
+      padding: 30px 20px 50px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--text-muted);
+      background: #110e10;
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <ul class="nav-links">
+        <li><a href="index.html#shop">Shop</a></li>
+        <li><a href="index.html#bundles">Bundles</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+      </ul>
+      <div class="nav-badge">
+        <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
+          <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Coffee Co. logo">
+          <span>Parlor & Paw</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#merch">Merch</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+    <div class="page-header">
+      <h1 class="page-title">About Parlor & Paw</h1>
+      <p class="page-subtitle">Curious brews, rich traditions, and a pup-inspired passion.</p>
+    </div>
+
+    <!-- Section 1: Our Story -->
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>Curious Brews & Dedicated Craft</h2>
+        <p>Founded in 2026, The Parlor & Paw Coffee Co. brings specialty cold brews, rich whole bean roasts, and artisanal accessories straight to your door. We blend a dark, vintage parlor aesthetic with a deep commitment to high-quality coffee and animal rescue, crafting every roast with character and care.</p>
+        <p>While our parlor on wheels is currently in development, our online shop ships our signature blends and curiosities nationwide.</p>
+      </div>
+      <div class="about-card">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Logo">
+        <div class="about-caption">Our official logo featuring Barry, Chief Executive Pup.</div>
+      </div>
+    </div>
+
+    <!-- Section 2: Meet Barry -->
+    <div class="about-grid">
+      <div class="about-card">
+        <!-- Replace src with your direct link for Barry's photo once uploaded to GitHub/ImgBB -->
+        <img src="https://i.postimg.cc/zGzjDNp1/IMG-2637.jpg" alt="Barry the Bug-Chi">
+        <div class="about-caption">The real-life Barry in his signature bow tie and bell collar.</div>
+      </div>
+      <div class="about-text">
+        <h2>Meet Barry: The Inspiration Behind the Logo</h2>
+        <p>The handsome fellow featured at the center of our logo is <strong>Barry</strong>, our beloved Bug-Chi (a mix of Boston Terrier, Pug, and Chihuahua).</p>
+        <p>With his striking blue eyes, oversized ears, signature dapper bow tie, and spirited personality, Barry embodies everything we stand for: charm, individuality, and pure joy. He’s our chief mascot and daily reminder to approach life—and coffee—with enthusiasm and a friendly face.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Parlor & Paw Coffee Co. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

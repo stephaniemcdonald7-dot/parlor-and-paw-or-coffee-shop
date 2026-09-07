@@ -32,27 +32,81 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
-    /* 1. Body Background: Lighten radial gradient so damask shows through */
-body {
-  background-color: #0b0705;
-  background-image: 
-    radial-gradient(circle at center, rgba(30, 20, 15, 0.1) 0%, rgba(5, 3, 2, 0.45) 100%),
-    url('dark-damask-tile.png');
-  background-repeat: repeat;
-  background-attachment: fixed;
-  color: #f0e6d2;
-}
+    body {
+      background-color: #0b0705;
+      background-image: 
+        radial-gradient(circle at center, rgba(30, 20, 15, 0.1) 0%, rgba(5, 3, 2, 0.45) 100%),
+        url('dark-damask-tile.png');
+      background-repeat: repeat;
+      background-attachment: fixed;
+      color: #f0e6d2;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-/* 2. Top Navigation: Change extension from .jpg to .png */
-.top-nav {
-  background-image: url('dark-wood-tile.png');
-  background-repeat: repeat;
-  background-position: top center;
-  box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.8), 
-              inset 0 -10px 15px rgba(0, 0, 0, 0.8);
-  border-bottom: 1px solid #c5a059; 
-  padding: 15px 0;
-}
+    .top-nav {
+      background-image: url('dark-wood-tile.png');
+      background-repeat: repeat;
+      background-position: top center;
+      box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.8), 
+                  inset 0 -10px 15px rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid #c5a059; 
+      padding: 15px 0;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: var(--text-light);
+      text-decoration: none;
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-accent);
+      border-color: var(--gold-accent);
+    }
+
+    .nav-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-badge img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-accent);
+    }
+
+    .nav-badge span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      color: var(--gold-accent);
+      white-space: nowrap;
+    }
 
     /* Hero */
     .hero {

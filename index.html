@@ -483,6 +483,82 @@
 
 .prev-btn { left: 10px; }
 .next-btn { right: 10px; }
+    .signatures {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+/* Outer wrapper that enables manual scrolling */
+.auto-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding: 15px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar while retaining scroll functionality */
+.auto-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+.auto-scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Moving inner container */
+.auto-scroll-track {
+  display: inline-flex;
+  gap: 20px;
+  animation: scrollAnimation 20s linear infinite;
+}
+
+/* Pause animation on hover or touch */
+.auto-scroll-container:hover .auto-scroll-track {
+  animation-play-state: paused;
+}
+
+/* Individual item cards */
+.signature-card {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  flex: 0 0 auto;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.signature-card:hover {
+  transform: translateY(-4px);
+}
+
+.signature-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.signature-card span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #4a2c2a;
+}
+
+/* Smooth continuous marquee animation */
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
   </style>
 </head>
 <body>

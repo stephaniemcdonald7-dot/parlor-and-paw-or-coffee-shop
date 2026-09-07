@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Parlor & Paw Coffee Co. — Online Shop</title>
 
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,7 +76,7 @@
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 20px;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -80,13 +84,14 @@
 
     .nav-links a {
       font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       letter-spacing: 1px;
       color: var(--text-light);
       text-decoration: none;
       padding-bottom: 4px;
       border-bottom: 1px solid transparent;
       transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
@@ -456,6 +461,7 @@
   <nav class="topnav">
     <div class="topnav-inner">
       <ul class="nav-links">
+        <li><a href="#about">About</a></li>
         <li><a href="#shop">Shop</a></li>
         <li><a href="#bundles">Bundles</a></li>
       </ul>
@@ -464,13 +470,14 @@
         <span>Parlor & Paw</span>
       </div>
       <ul class="nav-links">
+        <li><a href="#energy">Energy & Boosts</a></li>
         <li><a href="#merch">Merch</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="about">
     <span class="hero-badge">Online Shop · Est. 2026</span>
     <h1 class="hero-title">Curious Brews, Delivered</h1>
     <p class="hero-tagline">Craft cold brews, whole bean coffee, and curiosities for discriminating souls — shipped straight to your door while we save up for the parlor on wheels.</p>
@@ -629,7 +636,7 @@
     </div>
 
     <!-- Energy & Boosts -->
-    <div class="category-section">
+    <div class="category-section" id="energy">
       <h2 class="category-title">⚡ Energy & Boosts</h2>
       <div class="grid">
 
@@ -731,6 +738,22 @@
             data-item-price="11.99"
             data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
             data-item-name="Weekend Paw Beverage Sleeve">
+            Add to Cart
+          </button>
+        </div>
+
+        <div class="product-card">
+          <img class="product-img" src="https://images.printify.com/mockup/6a9e3940cbdbfb20ed0288b1/114840/140946/1a07a31c060.jpg?s=608" alt="Parlor & Paw Logo Sticker">
+          <div class="product-info">
+            <h3>🐾 Parlor & Paw Logo Sticker</h3>
+            <p class="product-description">Durable vinyl die-cut sticker featuring the emblem.</p>
+            <div class="product-price">$4.99</div>
+          </div>
+          <button class="buy-btn snipcart-add-item"
+            data-item-id="parlor-paw-logo-sticker"
+            data-item-price="4.99"
+            data-item-url="https://stephaniemcdonald7-dot.github.io/parlor-and-paw-or-coffee-shop/"
+            data-item-name="Parlor & Paw Logo Sticker">
             Add to Cart
           </button>
         </div>

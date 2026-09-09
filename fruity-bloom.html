@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruity Bloom Coffee — The Parlor & Paw Coffee Co.</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f0d0e;
+      --bg-card: #181416;
+      --mahogany: #2b1810;
+      --gold-accent: #c5a059;
+      --gold-hover: #e0b86c;
+      --text-light: #ece3d4;
+      --text-muted: #a69888;
+      --border-gold: rgba(197, 160, 89, 0.3);
+      --border-gold-strong: rgba(197, 160, 89, 0.7);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 50% 0%, #1f1613 0%, var(--bg-dark) 70%);
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-light);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* ---------- Top navigation ---------- */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      background: rgba(15, 13, 14, 0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .topnav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      color: var(--text-light);
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-accent);
+      border-color: var(--gold-accent);
+    }
+
+    .nav-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-badge img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--gold-accent);
+    }
+
+    .nav-badge span {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      color: var(--gold-accent);
+      white-space: nowrap;
+    }
+
+    /* ---------- Product Detail Layout ---------- */
+    .back-link {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      color: var(--gold-accent);
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    .back-link:hover {
+      color: var(--gold-hover);
+      text-decoration: underline;
+    }
+
+    .product-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 4px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    @media (max-width: 768px) {
+      .product-detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .product-detail-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 2px;
+      border: 1px solid var(--border-gold);
+      filter: brightness(0.95) contrast(1.05);
+    }
+
+    .product-detail-info h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--gold-accent);
+      margin: 0 0 15px 0;
+      line-height: 1.2;
+    }
+
+    .product-detail-price {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .product-detail-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .donation-banner {
+      background: rgba(197, 160, 89, 0.08);
+      border: 1px solid var(--border-gold-strong);
+      padding: 14px 18px;
+      border-radius: 2px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--gold-accent);
+      font-size: 1.05rem;
+      margin-bottom: 25px;
+    }
+
+    .buy-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: var(--mahogany);
+      color: var(--gold-accent);
+      border: 1px solid var(--gold-accent);
+      padding: 16px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .buy-btn:hover {
+      background-color: var(--gold-accent);
+      color: #000;
+      box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+    }
+
+    footer {
+      border-top: 1px solid var(--border-gold);
+      margin-top: 80px;
+      padding: 30px 20px 50px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#shop">Shop</a></li>
+      </ul>
+      <div class="nav-badge">
+        <img src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/brand/594d8d02-09f4-4aaa-87ab-de1f4319f8b7/logo-1787862023463.jpg" alt="Parlor & Paw Coffee Co. logo">
+        <span>Parlor & Paw</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <a href="index.html#beans" class="back-link">← Back to Shop</a>
+
+    <div class="product-detail-grid">
+      <div>
+        <img class="product-detail-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/PJxc306L/reference-2026-09-09T02-48-40-302Z.jpg?_t=1788924666168" alt="Fruity Bloom Coffee">
+      </div>
+      <div class="product-info">
+        <h1>🌸 Fruity Bloom Coffee</h1>
+        <div class="product-detail-price">$16.74</div>
+        <p class="product-detail-desc">Freshly roasted whole beans with vibrant, fruit-forward notes. Carefully selected and crafted for a rich, aromatic morning ritual that satisfies your refined palate while supporting a profound cause.</p>
+        
+        <div class="donation-banner">
+          🐾 Includes a $2.00 direct donation to the Nelson County Animal Shelter with every bag purchased.
+        </div>
+
+        <a class="buy-btn" href="https://app.dough.do/api/buy/PJxc306L" target="_blank" rel="noopener noreferrer">Buy Now on Dough</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Questions about an order? Reach out anytime — we're brewing something special for the road ahead.
+  </footer>
+
+</body>
+</html>

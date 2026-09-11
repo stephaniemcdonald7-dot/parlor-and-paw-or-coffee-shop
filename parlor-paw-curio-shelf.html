@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Curio Shelf — Parlor & Paw Coffee Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #ede2cd;
+    --ink-dim: #c9b99a;
+    --bg: #1a1410;
+    --bg-panel: #241c17;
+    --bg-panel-2: #2c221b;
+    --brass: #b8894f;
+    --brass-bright: #d4a65f;
+    --plum: #5a2a35;
+    --hairline: #4a3a2e;
+    --radius: 2px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(ellipse at top, #241c17 0%, #1a1410 55%),
+      var(--bg);
+    color: var(--ink);
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  header.masthead {
+    text-align: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 48px;
+  }
+
+  .paw {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--brass);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    margin: 0 0 12px;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  .dek {
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 1.15rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .disclosure {
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+    text-align: center;
+    max-width: 520px;
+    margin: 22px auto 0;
+    line-height: 1.55;
+    opacity: 0.85;
+  }
+
+  .shelf {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .item {
+    position: relative;
+    background: linear-gradient(160deg, var(--bg-panel-2), var(--bg-panel));
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius);
+    padding: 28px 30px 26px;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+
+  .item::before {
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(184, 137, 79, 0.18);
+    pointer-events: none;
+  }
+
+  .glyph {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brass-bright);
+  }
+  .glyph svg { width: 34px; height: 34px; }
+
+  .item h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+
+  .item .blurb {
+    color: var(--ink-dim);
+    font-size: 1.02rem;
+    margin: 0 0 16px;
+  }
+
+  .item .meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--brass-bright);
+  }
+
+  .buy {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--bg);
+    background: var(--brass-bright);
+    padding: 9px 22px;
+    border-radius: var(--radius);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .buy:hover {
+    background: #e6bc7a;
+    transform: translateY(-1px);
+  }
+
+  footer {
+    margin-top: 56px;
+    text-align: center;
+    border-top: 1px solid var(--hairline);
+    padding-top: 28px;
+  }
+
+  footer .sign {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--ink-dim);
+    font-size: 1.05rem;
+  }
+
+  footer .shop-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--brass-bright);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184, 137, 79, 0.4);
+  }
+
+  @media (max-width: 520px) {
+    .item { grid-template-columns: 1fr; }
+    .glyph { display: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="paw">🐾 Parlor & Paw Coffee Co.</div>
+      <h1>The Curio Shelf</h1>
+      <p class="dek">A few well-worn favorites from around the parlor — the gear we reach for between brews.</p>
+      <p class="disclosure">As an Amazon Associate, Parlor &amp; Paw Coffee Co. earns from qualifying purchases made through the links below, at no extra cost to you.</p>
+    </header>
+
+    <div class="shelf">
+
+      <div class="item">
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3h12l-1 5H7L6 3z"/><path d="M5 8h14l-1.5 11a2 2 0 0 1-2 1.8H8.5a2 2 0 0 1-2-1.8L5 8z"/><path d="M9 12h6"/></svg>
+        </div>
+        <div>
+          <h2>64oz Cold Brew Mason Jar Pitcher</h2>
+          <p class="blurb">The workhorse behind every batch of Signature Cold Brew — a wide-mouth glass pitcher with a fine stainless filter, built for steady overnight steeping.</p>
+          <div class="meta">
+            <span class="price">~$20</span>
+            <a class="buy" href="https://www.amazon.com/dp/B0CGWS1M51?tag=familiarandfr-20" target="_blank" rel="noopener sponsored">Buy on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M7 3l10 0"/><path d="M8 3c0 6-4 6-4 12a8 8 0 0 0 16 0c0-6-4-6-4-12"/></svg>
+        </div>
+        <div>
+          <h2>Ceramic Pour-Over Dripper</h2>
+          <p class="blurb">For the slower mornings. A simple ceramic cone that keeps heat steady and pulls a cleaner, brighter cup than a drip machine ever will.</p>
+          <div class="meta">
+            <span class="price">~$15</span>
+            <a class="buy" href="https://www.amazon.com/dp/B017WWE1ZS?tag=familiarandfr-20" target="_blank" rel="noopener sponsored">Buy on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="9" y="3" width="3" height="9" rx="1.5"/><path d="M6 21h9"/><path d="M9 12v9"/><path d="M6 17c0-3 6-3 6 0"/></svg>
+        </div>
+        <div>
+          <h2>Milk Frother, with Stand</h2>
+          <p class="blurb">Turns any cold brew into something closer to the Duchess's Vanilla Cream — a quick whirl of foam for lattes, matcha, or a splash of vanilla elixir.</p>
+          <div class="meta">
+            <span class="price">~$13</span>
+            <a class="buy" href="https://www.amazon.com/dp/B074ZL35DH?tag=familiarandfr-20" target="_blank" rel="noopener sponsored">Buy on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 8h9a3 3 0 0 1 0 6h-1"/><path d="M6 8v9a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2"/><path d="M4 20h10"/></svg>
+        </div>
+        <div>
+          <h2>Insulated Travel Tumbler, Black</h2>
+          <p class="blurb">Keeps a Velvet Paw or Midnight Parlor Silk cold for hours on the road — double-wall stainless, no sweat, no leaks.</p>
+          <div class="meta">
+            <span class="price">~$18</span>
+            <a class="buy" href="https://www.amazon.com/dp/B07STJ9PTF?tag=familiarandfr-20" target="_blank" rel="noopener sponsored">Buy on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="14" rx="7" ry="6"/><path d="M8 9l-1.5-4 3 2.5"/><path d="M16 9l1.5-4-3 2.5"/><circle cx="9.5" cy="13.5" r="0.6" fill="currentColor"/><circle cx="14.5" cy="13.5" r="0.6" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <h2>Black Cat Coffee Mug</h2>
+          <p class="blurb">A gothic little companion for the shelf — glossy black ceramic with a cat curled into the handle. Because the parlor needs a mug, too.</p>
+          <div class="meta">
+            <span class="price">~$14</span>
+            <a class="buy" href="https://www.amazon.com/dp/B0CKYMQL4S?tag=familiarandfr-20" target="_blank" rel="noopener sponsored">Buy on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="glyph">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="6" width="18" height="13" rx="1.5"/><path d="M3 10h18"/><path d="M3 14h18"/></svg>
+        </div>
+        <div>
+          <h2>Fleece Throw, Black</h2>
+          <p class="blurb">For the food-truck daydream days — curl up with a cold brew and this while we save up for the parlor on wheels.</p>
+          <div class="meta">
+            <span class="price">~$20</span>
+            <a class="buy" href="https://www.amazon.com/dp/B08FY9JCXV?tag=familiarandfr-20" target="_blank" rel="noopener sponsored">Buy on Amazon</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer>
+      <p class="sign">— brewed with curiosity, shared with fondness</p>
+      <a class="shop-link" href="https://parlorandpawcoffee.com" target="_blank" rel="noopener">Visit the Parlor & Paw shop →</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -869,7 +869,7 @@
           <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/qROa5bUq/model1-2026-09-02T03-10-22-469Z.webp" alt="Midnight Parlor Silk">
           <div class="product-info">
             <h3>🌙 Midnight Parlor Silk</h3>
-             <p class="product-description">A playful cotton candy cold brew — sweet, nostalgic, and just a little bit mischievous.</p>
+            <p class="product-description">A playful cotton candy cold brew — sweet, nostalgic, and just a little bit mischievous.</p>
             <div class="product-price">$6.99</div>
             <div class="ship-note">Single can · standard shipping rate</div>
           </div>
@@ -911,14 +911,7 @@
           <a class="buy-btn" href="https://app.dough.do/api/buy/yX7vxFT9" target="_blank" rel="noopener noreferrer">Buy Now</a>
         </div>
 
-        <div class="product-card">
-          <img class="product-img" src="https://fqnzgstimsmpxdztkdup.supabase.co/storage/v1/object/public/images/JbBEpcYt/model1-2026-09-01T22-03-03-090Z.webp" alt="Blackberry Vanilla Elixir">
-          <div class="product-info">
-            <h3>🫐 Blackberry Vanilla Elixir</h3>
-            <p class="product-description">Premium finish item fulfilled directly via Dough & Stripe.</p>
-          </div>
-          <a id="dough-buy-btn" class="buy-btn" href="https://app.dough.do/api/buy/JbBEpcYt?variant=%7B%22finish%22%3A%22Glossy%20Black%22%7D" target="_blank" rel="noopener noreferrer">Buy Now</a>
-        </div>
+        <!-- Blackberry Vanilla Elixir temporarily removed: pricing/variant data glitch reported to Dough (feedback 0520d36f-e808-420e-b5e8-23033638e0e1) -->
 
       </div>
     </div>
@@ -1022,14 +1015,6 @@
 
   <!-- Snipcart Hidden Container -->
   <div hidden id="snipcart" data-api-key="NWE1ZjUzNTctNmZjMi00MWEzLWE0N2ItNTc3ZGRiYTA2NTlmNjM5MjQzNTc0OTQ1OTYxNTg3" data-config-modal-style="side"></div>
-
-  <script>
-    function updateDoughCheckoutLink() {
-      const selector = document.getElementById('dough-finish-selector');
-      const buyButton = document.getElementById('dough-buy-btn');
-      buyButton.href = selector.value;
-    }
-  </script>
 
   <!-- ==================== Signup popup (The Standing Invitation) ==================== -->
   <div id="pp-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="pp-heading">

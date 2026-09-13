@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You — The Parlor & Paw Coffee Co.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f0d0e;
+      --gold-accent: #c5a059;
+      --gold-hover: #e0b86c;
+      --text-light: #ece3d4;
+      --text-muted: #a69888;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--bg-dark);
+      background-image: radial-gradient(circle at 50% 0%, #1f1613 0%, var(--bg-dark) 70%);
+      color: var(--text-light);
+      font-family: 'Cormorant Garamond', serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .thankyou-card {
+      max-width: 720px;
+      width: 100%;
+      text-align: center;
+    }
+    .thankyou-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--gold-accent);
+      display: block;
+      margin-bottom: 2rem;
+    }
+    .thankyou-message {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      letter-spacing: 1px;
+      color: var(--gold-accent);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .thankyou-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    .back-link {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #000;
+      background: var(--gold-accent);
+      padding: 12px 28px;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .back-link:hover {
+      background: var(--gold-hover);
+    }
+  </style>
+</head>
+<body>
+  <div class="thankyou-card">
+    <img src="thank-you-cards.jpg" alt="Thank you for your purchase — The Parlor & Paw Coffee Co.">
+    <div class="thankyou-message">Order Confirmed</div>
+    <p class="thankyou-sub">A confirmation email is on its way. We'll notify you again once your order ships.</p>
+    <a href="index.html" class="back-link">Continue Shopping</a>
+  </div>
+</body>
+</html>

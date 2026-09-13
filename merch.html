@@ -736,6 +736,37 @@
       cursor: zoom-in;
     }
 
+
+    /* Cart Icon */
+    .nav-cart {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold-accent);
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: 1px solid var(--gold-accent);
+      border-radius: 3px;
+      padding: 6px 12px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .nav-cart:hover {
+      background: var(--gold-accent);
+      color: #000;
+    }
+    .nav-cart svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+    .nav-cart .snipcart-items-count {
+      display: inline-block;
+      min-width: 16px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -757,6 +788,10 @@
         <li><a href="coffee.html#energy">Energy & Boosts</a></li>
         <li><a href="merch.html">Merch</a></li>
       </ul>
+      <a href="#" class="nav-cart snipcart-checkout" aria-label="Open cart">
+        <svg viewBox="0 0 24 24"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.44c-.16.28-.25.61-.25.97 0 1.1.9 2 2 2h12v-2h-11.42c-.14 0-.25-.11-.25-.25 0-.05.01-.1.03-.14l.9-1.61h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1h-14.7l-.94-2zm0 15c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        <span class="snipcart-items-count">0</span>
+      </a>
     </div>
   </nav>
 

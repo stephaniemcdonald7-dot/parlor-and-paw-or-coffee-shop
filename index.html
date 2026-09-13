@@ -347,6 +347,31 @@
       margin-bottom: 10px;
     }
 
+    /* Front/Back image toggle thumbnails */
+    .img-toggle-row {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      padding: 8px 0 4px;
+    }
+    .img-toggle-thumb {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 3px;
+      cursor: pointer;
+      opacity: 0.55;
+      border: 1px solid transparent;
+      transition: opacity 0.15s ease, border-color 0.15s ease;
+    }
+    .img-toggle-thumb:hover {
+      opacity: 0.85;
+    }
+    .img-toggle-thumb.active {
+      opacity: 1;
+      border-color: var(--gold-accent);
+    }
+
     /* Standard Rate Note */
     .ship-note {
       font-family: 'Cormorant Garamond', serif;
@@ -925,7 +950,11 @@
       <div class="grid">
 
         <div class="product-card">
-          <img class="product-img" src="https://images.printify.com/mockup/6aa50c9cc752f5436d0ac017/64768/127670/boston-terrier-logo-parlor-paw-t-shirt-small-chest-graphic.jpg?camera_label=folded-2&t=1789268910385&s=500" alt="Boston Terrier Logo Tee">
+          <img class="product-img" id="tee-main-img" src="https://images.printify.com/mockup/6aa50c9cc752f5436d0ac017/64768/127670/boston-terrier-logo-parlor-paw-t-shirt-small-chest-graphic.jpg?camera_label=folded-2&t=1789268910385&s=500" alt="Boston Terrier Logo Tee">
+          <div class="img-toggle-row">
+            <img class="img-toggle-thumb active" src="https://images.printify.com/mockup/6aa50c9cc752f5436d0ac017/64768/127670/boston-terrier-logo-parlor-paw-t-shirt-small-chest-graphic.jpg?camera_label=folded-2&t=1789268910385&s=500" alt="Front view" onclick="document.getElementById('tee-main-img').src=this.src; this.parentElement.querySelectorAll('.img-toggle-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+            <img class="img-toggle-thumb" src="https://images.printify.com/mockup/6aa50c9cc752f5436d0ac017/64768/97993/boston-terrier-logo-parlor-paw-t-shirt-small-chest-graphic.jpg?camera_label=back&t=1789268917734&s=500" alt="Back view" onclick="document.getElementById('tee-main-img').src=this.src; this.parentElement.querySelectorAll('.img-toggle-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active');">
+          </div>
           <div class="product-info">
             <h3>🐶 Boston Terrier Logo Tee</h3>
             <p class="product-description">Small chest graphic featuring our Boston Terrier logo. Classic unisex fit.</p>

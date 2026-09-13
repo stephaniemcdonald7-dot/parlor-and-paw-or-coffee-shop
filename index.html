@@ -59,9 +59,7 @@
     button, input, select { font: inherit; }
     .container { width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
 
-    /* =========================================================
-       ANNOUNCEMENT BAR & NAVIGATION
-    ========================================================= */
+    /* ANNOUNCEMENT BAR */
     .announcement {
       background: var(--mahogany);
       border-bottom: 1px solid var(--border);
@@ -74,6 +72,7 @@
       text-transform: uppercase;
     }
 
+    /* NAVIGATION */
     .topnav {
       position: sticky;
       top: 0;
@@ -150,9 +149,7 @@
       white-space: nowrap;
     }
 
-    /* =========================================================
-       HERO & INTRO
-    ========================================================= */
+    /* HERO */
     .hero {
       position: relative;
       overflow: hidden;
@@ -239,14 +236,13 @@
 
     .hero-note { margin-top: 22px; color: var(--muted-dark); font-size: .72rem; letter-spacing: .4px; }
 
+    /* BRAND INTRO */
     .brand-intro { padding: 80px 20px; text-align: center; border-bottom: 1px solid var(--border); }
     .eyebrow { color: var(--gold); font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; }
     .brand-intro h2 { margin: 0 auto 18px; max-width: 750px; font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); letter-spacing: 1px; color: var(--cream); }
     .brand-intro p { max-width: 650px; margin: auto; color: var(--muted); font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.7; }
 
-    /* =========================================================
-       SAMPLER SPOTLIGHT & CARDS
-    ========================================================= */
+    /* SAMPLER CALLOUT */
     .sampler-callout {
       position: relative;
       margin: 60px 0 80px;
@@ -287,6 +283,7 @@
     }
     .sampler-button:hover { background: var(--gold-light); transform: translateY(-2px); }
 
+    /* SECTIONS & GRIDS */
     .category-section { margin: 75px 0; scroll-margin-top: 110px; }
     .category-title {
       display: flex;
@@ -367,9 +364,7 @@
 
     .buy-btn:hover { background: var(--gold); color: #090707; box-shadow: 0 0 15px rgba(197,160,89,.22); }
 
-    /* =========================================================
-       FOOD TRUCK SPOTLIGHT
-    ========================================================= */
+    /* FOOD TRUCK SPOTLIGHT */
     .truck-spotlight {
       margin: 90px 0;
       padding: 50px 30px;
@@ -385,9 +380,18 @@
     .truck-content h2 { color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.75rem; margin-top: 0; }
     .truck-content p { color: var(--muted); font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.6; }
 
-    /* =========================================================
-       FOOTER & MODALS
-    ========================================================= */
+    /* FINAL CTA */
+    .final-cta {
+      margin: 90px 0 40px;
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .final-cta h2 { color: var(--gold); font-family: 'Cinzel', serif; font-size: 1.8rem; margin-bottom: 15px; }
+    .final-cta p { color: var(--muted); font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; margin-bottom: 25px; }
+
+    /* FOOTER & MODALS */
     footer { margin-top: 100px; padding: 55px 20px 60px; border-top: 1px solid var(--border); background: #0a0808; text-align: center; }
     .footer-logo { width: 62px; height: 62px; border-radius: 50%; border: 1px solid var(--gold); margin: 0 auto 15px; }
     .footer-name { margin-bottom: 8px; color: var(--gold); font-family: 'Cinzel', serif; font-size: .9rem; letter-spacing: 2px; text-transform: uppercase; }
@@ -503,7 +507,7 @@
       </div>
 
       <div class="hero-note">
-        Online-only for now · A Parlor & Paw food truck is in the works
+        Online-Only For Now · A Parlor & Paw Food Truck is in the Works
       </div>
     </div>
   </section>
@@ -522,7 +526,7 @@
   <!-- MAIN SHOPPING AREA -->
   <main class="container" id="shop">
 
-    <!-- SAMPLER CALLOUT (START HERE) -->
+    <!-- 1. SAMPLER CALLOUT (START HERE) -->
     <section class="sampler-callout" id="sampler">
       <div class="eyebrow">Not Sure Where to Begin?</div>
       <h2>Meet The Pawlor Sampler</h2>
@@ -535,7 +539,7 @@
       </a>
     </section>
 
-    <!-- FEATURED BUNDLES -->
+    <!-- 2. FEATURED BUNDLES -->
     <section class="category-section" id="bundles">
       <h2 class="category-title">Featured Bundles</h2>
       <div class="grid">
@@ -563,7 +567,7 @@
       </div>
     </section>
 
-    <!-- COLD BREWS -->
+    <!-- 3. COLD BREWS -->
     <section class="category-section" id="cold-brews">
       <h2 class="category-title">Signature Cold Brews</h2>
       <div class="grid">
@@ -648,7 +652,7 @@
       </div>
     </section>
 
-    <!-- COFFEE BEANS & SYRUPS -->
+    <!-- 4. COFFEE BEANS & SYRUPS -->
     <section class="category-section" id="beans">
       <h2 class="category-title">Coffee Beans & Syrups</h2>
       <div class="grid">
@@ -661,7 +665,7 @@
             <h3>🌸 Fruity Bloom Coffee</h3>
             <p class="product-description">Freshly roasted whole beans with vibrant, fruit-forward tasting notes.</p>
             <div class="product-price">$16.74</div>
-            <div class="donation-note">🐾 Includes $2 donation to Nelson County Animal Shelter</div>
+            <div class="donation-note">🐾 Includes $2.00 donation to Nelson County Animal Shelter</div>
           </div>
           <a class="buy-btn" href="https://app.dough.do/api/buy/PJxc306L" target="_blank" rel="noopener noreferrer">Buy Coffee</a>
         </div>
@@ -679,7 +683,7 @@
       </div>
     </section>
 
-    <!-- ENERGY & BOOSTS -->
+    <!-- 5. ENERGY & BOOSTS -->
     <section class="category-section" id="energy">
       <h2 class="category-title">Energy & Boosts</h2>
       <div class="grid">
@@ -696,7 +700,17 @@
       </div>
     </section>
 
-    <!-- MERCHANDISE -->
+    <!-- 6. FOOD TRUCK SPOTLIGHT -->
+    <section class="truck-spotlight" id="truck">
+      <div class="truck-content">
+        <h2>The Parlor Is Coming to the Road 🚚</h2>
+        <p>
+          What started as direct-to-door small batch cold brews is expanding into a mobile parlor space. We are currently restoring a vintage trailer into our first official coffee truck—bringing our signature pours, sweet elixirs, and pet-friendly community events directly to local pop-ups and festivals.
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. MERCHANDISE -->
     <section class="category-section" id="merch">
       <h2 class="category-title">Merchandise & Goods</h2>
       <div class="grid">
@@ -804,14 +818,11 @@
       </div>
     </section>
 
-    <!-- FOOD TRUCK STORY SPOTLIGHT -->
-    <section class="truck-spotlight" id="truck">
-      <div class="truck-content">
-        <h2>The Parlor Is Coming to the Road 🚚</h2>
-        <p>
-          What started as direct-to-door small batch cold brews is expanding into a mobile parlor space. We are currently restoring a vintage trailer into our first official coffee truck—bringing our signature pours, sweet elixirs, and pet-friendly community events directly to local pop-ups and festivals.
-        </p>
-      </div>
+    <!-- 8. FINAL CLOSING CTA -->
+    <section class="final-cta">
+      <h2>Your next favorite coffee is probably hiding here.</h2>
+      <p>Hand-crafted cold brews, dark roasted curiosities, and apothecary goods delivered right to your doorstep.</p>
+      <a href="#sampler" class="hero-button">Shop the Collection</a>
     </section>
 
   </main>

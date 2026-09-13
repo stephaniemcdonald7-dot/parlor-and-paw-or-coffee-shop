@@ -715,25 +715,46 @@
       <h2 class="category-title">Merchandise & Goods</h2>
       <div class="grid">
 
-        <div class="product-card">
-          <img class="product-img" id="tee-main-img" src="https://images.printify.com/mockup/6aa50c9cc752f5436d0ac017/64768/127670/boston-terrier-logo-parlor-paw-t-shirt-small-chest-graphic.jpg?camera_label=folded-2&t=1789268910385&s=500" alt="Boston Terrier Logo Tee">
-          <div class="product-info">
-            <h3>Boston Terrier Logo Tee</h3>
-            <p class="product-description">Small chest graphic featuring our Boston Terrier logo. Classic unisex fit.</p>
-            <div class="product-price">$24.99 – $31.99</div>
-          </div>
-          <button class="buy-btn snipcart-add-item"
-            data-item-id="boston-terrier-logo-tee"
-            data-item-price="24.99"
-            data-item-url="https://parlorandpawcoffee.com"
-            data-item-name="Boston Terrier Logo Tee"
-            data-item-custom1-name="Color"
-            data-item-custom1-options="White|Black|Heather Military Green|Graphite Heather|Dark Heather"
-            data-item-custom2-name="Size"
-            data-item-custom2-options="XS|S|M|L|XL|2XL[+3.00]|3XL[+5.00]|4XL[+7.00]|5XL[+7.00]">
-            Add to Cart
-          </button>
-        </div>
+       <div class="product-card">
+  <!-- Main Image Display -->
+  <img 
+    class="product-img" 
+    id="tee-main-img" 
+    src="https://images.printify.com/mockup/6aa50c9cc752f5436d0ac017/64768/127670/boston-terrier-logo-parlor-paw-t-shirt-small-chest-graphic.jpg?camera_label=folded-2&t=1789268910385&s=500" 
+    alt="Boston Terrier Logo Tee">
+  
+  <!-- Image Gallery Thumbnails -->
+  <div class="product-thumbnails">
+    <img 
+      class="thumbnail active" 
+      src="https://images.printify.com/mockup/6aa50c9cc752f5436d0ac017/64768/127670/boston-terrier-logo-parlor-paw-t-shirt-small-chest-graphic.jpg?camera_label=folded-2&t=1789268910385&s=500" 
+      alt="Folded View" 
+      onclick="document.getElementById('tee-main-img').src=this.src">
+    <img 
+      class="thumbnail" 
+      src="https://images.printify.com/mockup/6aa50c9cc752f5436d0ac017/64768/97993/boston-terrier-logo-parlor-paw-t-shirt-small-chest-graphic.jpg?camera_label=back&t=1789320558211&s=500" 
+      alt="Back View" 
+      onclick="document.getElementById('tee-main-img').src=this.src">
+  </div>
+
+  <div class="product-info">
+    <h3>Boston Terrier Logo Tee</h3>
+    <p class="product-description">Small chest graphic featuring our Boston Terrier logo. Classic unisex fit.</p>
+    <div class="product-price">$24.99 – $31.99</div>
+  </div>
+  
+  <button class="buy-btn snipcart-add-item"
+    data-item-id="boston-terrier-logo-tee"
+    data-item-price="24.99"
+    data-item-url="https://parlorandpawcoffee.com"
+    data-item-name="Boston Terrier Logo Tee"
+    data-item-custom1-name="Color"
+    data-item-custom1-options="White|Black|Heather Military Green|Graphite Heather|Dark Heather"
+    data-item-custom2-name="Size"
+    data-item-custom2-options="XS|S|M|L|XL|2XL[+3.00]|3XL[+5.00]|4XL[+7.00]|5XL[+7.00]">
+    Add to Cart
+  </button>
+</div>
 
         <div class="product-card">
           <img class="product-img" src="https://images.printify.com/mockup/6aa50de7ba8fa316b702da83/65216/6310/parlor-paw-boston-terrier-coffee-mug-dog-cafe-ceramic-mug.jpg?camera_label=front&t=1789268942727&s=500" alt="Boston Terrier Coffee Mug">

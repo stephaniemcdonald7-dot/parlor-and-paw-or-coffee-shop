@@ -997,6 +997,15 @@
   <!-- Snipcart Hidden Container -->
   <div hidden id="snipcart" data-api-key="NWE1ZjUzNTctNmZjMi00MWEzLWE0N2ItNTc3ZGRiYTA2NTlmNjM5MjQzNTc0OTQ1OTYxNTg3" data-config-modal-style="side"></div>
 
+  <!-- Redirect to thank-you page after a completed order -->
+  <script>
+    document.addEventListener('snipcart.ready', function () {
+      Snipcart.events.on('order.completed', function () {
+        window.location.href = 'thank-you.html';
+      });
+    });
+  </script>
+
   <!-- ==================== Signup popup (The Standing Invitation) ==================== -->
   <div id="pp-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="pp-heading">
     <div class="pp-card">

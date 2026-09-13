@@ -707,6 +707,35 @@
       .pp-card-mark svg { width: 28px; height: 28px; }
       .pp-card-body { padding: 24px 22px 22px; }
     }
+    /* Hover Image Zoom Popup */
+    .img-zoom-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 13, 14, 0.82);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    .img-zoom-overlay.visible {
+      opacity: 1;
+    }
+    .img-zoom-overlay img {
+      max-width: min(80vw, 600px);
+      max-height: 80vh;
+      object-fit: contain;
+      border: 2px solid var(--gold-accent);
+      border-radius: 4px;
+      background: var(--bg-card);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+    .product-img, .card > img.product-img {
+      cursor: zoom-in;
+    }
+
   </style>
 </head>
 <body>
@@ -1254,5 +1283,44 @@
   })();
   </script>
 
+  <!-- Hover Image Zoom Popup -->
+  <div class="img-zoom-overlay" id="img-zoom-overlay">
+    <img id="img-zoom-target" src="" alt="Enlarged view">
+  </div>
+  <script>
+    (function () {
+      const overlay = document.getElementById('img-zoom-overlay');
+      const zoomImg = document.getElementById('img-zoom-target');
+
+      function attachZoom(img) {
+        img.addEventListener('mouseenter', () => {
+          zoomImg.src = img.src;
+          zoomImg.alt = img.alt || '';
+          overlay.classList.add('visible');
+        });
+        img.addEventListener('mouseleave', () => {
+          overlay.classList.remove('visible');
+        });
+      }
+
+      // Apply to every current product image
+      document.querySelectorAll('.product-img').forEach(attachZoom);
+
+      // Also apply to any product images added to the page later
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((m) => {
+          m.addedNodes.forEach((node) => {
+            if (node.nodeType !== 1) return;
+            if (node.matches && node.matches('.product-img')) attachZoom(node);
+            if (node.querySelectorAll) node.querySelectorAll('.product-img').forEach(attachZoom);
+          });
+        });
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+
+      // Clicking the overlay itself closes it (in case of touch devices)
+      overlay.addEventListener('click', () => overlay.classList.remove('visible'));
+    })();
+  </script>
 </body>
 </html>
